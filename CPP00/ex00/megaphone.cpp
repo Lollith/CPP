@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/08/15 18:08:16 by agouet           ###   ########.fr       */
+/*   Updated: 2022/08/22 17:28:48 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int main (int ac, char const **av)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE * ";
 	else
 	{
-		for( i = 0; i < strlen(av[1]); i++)
-		{
-			M = toupper (av[1][i]);
-			std::cout << M;
-		}
+		std::string str (av[1]);
+
+		for ( std::string::iterator it = str.begin(); it != str.end(); it++)
+			std::cout << (char) toupper (*it);
+
 	}
 	std::cout << std::endl;
 	return (0);
