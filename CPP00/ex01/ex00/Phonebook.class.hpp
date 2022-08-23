@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/08/23 20:42:12 by lollith          ###   ########.fr       */
+/*   Updated: 2022/08/23 21:42:34 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
+#ifndef PHONEBOOK_CLASS_H
+# define PHONEBOOK_CLASS_H
 
-int main (int ac, char const **av)
+class Phonebook 
 {
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE * ";
-	else
-	{
-		std::string str (av[1]);
+	public:
 
-		for ( std::string::iterator it = str.begin(); it != str.end(); it++)
-			std::cout << (char) toupper (*it);
+		int	repertoire[8];
+};
 
-	}
-	std::cout << std::endl;
-	return (0);
-}
+#endif
