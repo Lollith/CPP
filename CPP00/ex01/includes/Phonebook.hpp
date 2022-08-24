@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.class.cpp                                :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/08/23 21:42:37 by lollith          ###   ########.fr       */
+/*   Updated: 2022/08/24 16:51:13 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
+#ifndef PHONEBOOK_CLASS_H
+# define PHONEBOOK_CLASS_H
 
-int main (int ac, char const **av)
-{
+# include "Contact.hpp"
 
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE * ";
-	else
-	{
-		std::string str (av[1]);
+class Phonebook {
 
-		for ( std::string::iterator it = str.begin(); it != str.end(); it++)
-			std::cout << (char) toupper (*it);
+	public:
 
-	}
-	std::cout << std::endl;
-	return (0);
-}
+		int	repertoire[8];
+
+		Phonebook(void);
+		~Phonebook(void);
+
+
+		void test(void) const;
+};
+
+#endif

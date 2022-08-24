@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.class.hpp                                :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/08/23 21:42:34 by lollith          ###   ########.fr       */
+/*   Updated: 2022/08/24 16:52:23 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_H
-# define PHONEBOOK_CLASS_H
+#include <iostream>
+#include <cstring>
 
-class Phonebook 
-{
-	public:
+#include "Phonebook.hpp"
 
-		int	repertoire[8];
-};
+Phonebook::Phonebook(void){
+	return;
+}
 
-#endif
+Phonebook::~Phonebook(void){
+	return;
+}
+
+void Phonebook::test(void) const{
+	std::cout << "test" << std::endl;
+	return;
+}

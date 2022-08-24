@@ -3,32 +3,40 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lollith <lollith@student.42.fr>            +#+  +:+       +#+         #
+#    By: agouet <agouet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 16:40:46 by agouet            #+#    #+#              #
-#    Updated: 2022/08/23 21:42:38 by lollith          ###   ########.fr        #
+#    Updated: 2022/08/24 17:14:16 by agouet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	PhoneBook
-
-SRC		=	Phonebook.class.cpp
-
-OBJ		=	$(SRC:.cpp=.o)
-DEP		=	$(SRCS:.cpp=.d)
 CC		=	c++
-FLAGS	= -MMD -Wall -Wextra -Werror -std=c++98
 
-%.o:	%.cpp
-		$(CC) $(CFLAGS) -c $< -o $@
+SRC_PATHS = ./sources/
 
-$(NAME): $(OBJ)
-		$(CC) $(CFLAG) $(OBJ) -o $(NAME)
+SRC		=	$(addprefix ./sources/, \
+				Phonebook.cpp \
+				Contact.cpp \
+				main.cpp)
+
+OBJ		=	$(SRC:./sources/%.cpp=./build/%.o)
+DEP		=	$(SRC:./sources/%.cpp=./build/%.d)
+CFLAGS	= 	-MMD -Wall -Wextra -Werror -std=c++98
+INC		=	-I ./includes
+
 
 all	: $(NAME)
 
+build/%.o:	sources/%.cpp
+		mkdir -p build
+		$(CC) $(CFLAGS) -c $^ -o $@ $(INC)
+
+$(NAME): $(OBJ)
+		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
 clean:
-		rm -f $(OBJ) $(DEP)
+		rm -rf build
 
 fclean: clean
 		rm -f $(NAME)
