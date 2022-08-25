@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: agouet <agouet@student.42.fr>              +#+  +:+       +#+         #
+#    By: lollith <lollith@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 16:40:46 by agouet            #+#    #+#              #
-#    Updated: 2022/08/24 17:14:16 by agouet           ###   ########.fr        #
+#    Updated: 2022/08/25 11:03:00 by lollith          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,12 +23,12 @@ SRC		=	$(addprefix ./sources/, \
 OBJ		=	$(SRC:./sources/%.cpp=./build/%.o)
 DEP		=	$(SRC:./sources/%.cpp=./build/%.d)
 CFLAGS	= 	-MMD -Wall -Wextra -Werror -std=c++98
-INC		=	-I ./includes
+INC		=	-I ./includes/
 
 
 all	: $(NAME)
 
-build/%.o:	sources/%.cpp
+build/%.o:	./sources/%.cpp
 		mkdir -p build
 		$(CC) $(CFLAGS) -c $^ -o $@ $(INC)
 
@@ -42,7 +42,7 @@ fclean: clean
 		rm -f $(NAME)
 
 re: fclean
-	make
+	make -C .
 
 .PHONY: all re clean fclean
 
