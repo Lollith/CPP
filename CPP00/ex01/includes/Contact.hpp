@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/08/25 15:48:31 by lollith          ###   ########.fr       */
+/*   Updated: 2022/08/28 18:24:41 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <string>
 
-class Contact 
+class Contact
 {
 	public:
 
@@ -25,11 +25,11 @@ class Contact
 
 	private:
 
-		std::string	first_name;
-		std::string	last_name;
-		std::string	nickname;
-		std::string	number;
-		std::string	darkest_secret;
+		std::string	m_first_name;
+		//std::string	m_last_name;
+		//std::string	m_nickname;
+		//std::string	m_number;
+		//std::string	m_darkest_secret;
 };
 
 #endif

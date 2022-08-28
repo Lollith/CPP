@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/08/25 12:41:18 by lollith          ###   ########.fr       */
+/*   Updated: 2022/08/28 18:24:35 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 
-Phonebook::Phonebook(void){
+Phonebook::Phonebook(void): m_nb_contacts(0){
 	return;
 }
 
@@ -22,11 +22,13 @@ Phonebook::~Phonebook(void){
 
 void Phonebook::add(void) const{
 	std::string	buff;
+		std::string  m_first_nam;
 
 	std::cout << "enter ADD, SEARCH or EXIT: " << std::endl;
 	std::cin >> buff;
-	if(buff.compare("ADD") == 0){
-
+	if("ADD" == buff){
+		std::cout << "first_name: " << std::endl;
+		std::cin >> m_first_nam;
 	}
 		std::cout << buff << std::endl;
 	return;

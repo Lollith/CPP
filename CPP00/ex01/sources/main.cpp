@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 12:36:44 by agouet            #+#    #+#             */
-/*   Updated: 2022/08/25 15:48:31 by lollith          ###   ########.fr       */
+/*   Updated: 2022/08/28 13:36:32 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int main ()
 {
 	Phonebook Contact1;
-//	Contact instance_c;
 
 	Contact1.add();
 
