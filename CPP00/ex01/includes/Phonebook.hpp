@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/08/28 17:25:22 by agouet           ###   ########.fr       */
+/*   Updated: 2022/08/30 17:43:04 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Phonebook {
 
 
 		Phonebook(void);
+		//Phonebook(std::string first_name);
 		~Phonebook(void);
 
 
@@ -31,7 +32,8 @@ class Phonebook {
 
 	private:
 
-		int m_nb_contacts;
+	//	std::string m_first_name;
+		Contact m_contacts;
 };
 
 #endif
