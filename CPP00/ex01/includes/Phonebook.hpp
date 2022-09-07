@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/08/30 17:43:04 by agouet           ###   ########.fr       */
+/*   Updated: 2022/09/07 19:35:38 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ class Phonebook {
 		~Phonebook(void);
 
 
-		void add(void) const;
+		void add(void);
 
 
-	private:
+//	private:
 
 	//	std::string m_first_name;
 		Contact m_contacts;

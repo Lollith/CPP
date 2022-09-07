@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: agouet <agouet@student.42.fr>              +#+  +:+       +#+         #
+#    By: lollith <lollith@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 16:40:46 by agouet            #+#    #+#              #
-#    Updated: 2022/08/30 11:32:07 by agouet           ###   ########.fr        #
+#    Updated: 2022/09/07 15:59:31 by lollith          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,8 @@ INC		=	-I ./includes/
 all	: $(NAME)
 
 build/%.o:	./sources/%.cpp
-		mkdir -p build
-		$(CC) $(CFLAGS) -c $^ -o $@ $(INC)
+			mkdir -p build
+			$(CC) $(CFLAGS) -c $^ -o $@ $(INC)
 
 $(NAME): $(OBJ)
 		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)

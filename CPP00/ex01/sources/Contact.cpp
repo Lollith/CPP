@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/08/30 18:11:26 by agouet           ###   ########.fr       */
+/*   Updated: 2022/09/07 19:14:02 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
 #include "Contact.hpp"
 
 
@@ -20,17 +18,18 @@ Contact::Contact(void){
 	return;
 }
 
-Contact::Contact(std::string nom) : m_first_name(nom){
-	return;
-}
+//Contact::Contact(std::string nom) : m_first_name(nom){
+//	return;
+//}
 
 Contact::~Contact(void){
 	return;
 }
 
-void Contact::save(void) {
+void Contact::SetName( ){
 
 		std::cout << "first_name: " << std::endl;
-		std::cin >> m_first_name ;
+		std::cin >> this->m_first_name;
 		std::cout << m_first_name << std::endl;
+		return;
 }
