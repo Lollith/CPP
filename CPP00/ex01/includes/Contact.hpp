@@ -6,7 +6,7 @@
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/07 19:13:40 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/08 22:11:53 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,24 @@ class Contact
 		Contact(std::string nom);
 		~Contact(void);
 
-		void SetName();
+		void SetFirstName();
+		void SetLastName();
+		void SetNickName();
+		void SetNumber();
+		void SetDark();
+		std::string GetFirstName() const;
+		std::string GetLastName() const;
+		std::string GetNickName() const;
+		std::string GetNumber() const;
+		std::string GetDark() const;
 
-	//private:
+	private:
 	
-		std::string	m_first_name;//ne pas mettre en prive car inaccessible 
-		//std::string	m_last_name;
-		//std::string	m_nickname;
-		//std::string	m_number;
-		//std::string	m_darkest_secret;
+		std::string	m_first_name;
+		std::string	m_last_name;
+		std::string	m_nickname;
+		std::string	m_number;
+		std::string	m_darkest_secret;
 };
 
 #endif

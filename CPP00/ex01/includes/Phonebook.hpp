@@ -6,7 +6,7 @@
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/07 19:35:38 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/08 22:07:27 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,30 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 # include "Contact.hpp"
 
 class Phonebook {
 
 	public:
 
-
 		Phonebook(void);
-		//Phonebook(std::string first_name);
 		~Phonebook(void);
+		
+		int enter_cmd(void);
 
+	private:
 
-		void add(void);
-
-
-//	private:
-
-	//	std::string m_first_name;
-		Contact m_contacts;
+		std::string	buff;
+		std::string input;
+		int index_user;
+		int index;
+		Contact m_contacts[8];
+		bool check_digit(std::string s)const;
+		bool add(void);
+		bool display(void)const;
+		bool search(void);// non const car vien chercher input
+		void display_table(void);
 };
 
 #endif
