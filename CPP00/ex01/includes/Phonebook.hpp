@@ -6,16 +6,17 @@
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/08 22:07:27 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/09 11:09:25 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_H
-# define PHONEBOOK_CLASS_H
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-#include <iostream>
-#include <string>
-#include <iomanip>
+# include <iostream>
+# include <string>
+# include <iomanip>
+# include <sstream>
 # include "Contact.hpp"
 
 class Phonebook {
@@ -25,7 +26,7 @@ class Phonebook {
 		Phonebook(void);
 		~Phonebook(void);
 		
-		int enter_cmd(void);
+		int enter_cmd(void); // public
 
 	private:
 

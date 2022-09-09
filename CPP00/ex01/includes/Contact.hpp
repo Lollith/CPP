@@ -6,15 +6,15 @@
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/08 22:11:53 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/09 11:07:11 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_H
-# define CONTACT_CLASS_H
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <string>
 
 
 class Contact
@@ -22,7 +22,6 @@ class Contact
 	public:
 
 		Contact(void);
-		Contact(std::string nom);
 		~Contact(void);
 
 		void SetFirstName();

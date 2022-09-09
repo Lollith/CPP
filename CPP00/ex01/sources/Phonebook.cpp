@@ -6,13 +6,12 @@
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/08 22:24:19 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/09 10:06:13 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 #include "Contact.hpp"
-#include <sstream>
 
 using std::cout; // alleger lutilisation de cout
 using std::endl;
@@ -70,17 +69,17 @@ bool Phonebook::display(void) const
 		if (this->m_contacts[i].GetFirstName().length() > 10)
 			cout << std::setfill('-') << std::setw(9)<< this->m_contacts[i].GetFirstName().substr(0, 9)<<"." << "|"; //rempli du caractere (' '), pdt 10 fois
 		else
-			cout << std::setfill('-') << std::setw(10)<< this->m_contacts[i].GetFirstName() <<"|"; //rempli du caractere (' '), pdt 10 fois
+			cout << std::setfill('-') << std::setw(10)<< this->m_contacts[i].GetFirstName() <<"|";
 		
 		if (this->m_contacts[i].GetLastName().length() > 10)
-			cout << std::setfill('-') << std::setw(9)<< this->m_contacts[i].GetLastName().substr(0, 9)<<"." << "|"; //rempli du caractere (' '), pdt 10 fois
+			cout << std::setfill('-') << std::setw(9)<< this->m_contacts[i].GetLastName().substr(0, 9)<<"." << "|"; 
 		else
-			cout << std::setfill('-') << std::setw(10)<< this->m_contacts[i].GetLastName() <<"|"; //rempli du caractere (' '), pdt 10 fois
+			cout << std::setfill('-') << std::setw(10)<< this->m_contacts[i].GetLastName() <<"|"; 
 		
 		if (this->m_contacts[i].GetNickName().length() > 10)
-			cout << std::setfill('-') << std::setw(9)<< this->m_contacts[i].GetNickName().substr(0, 9)<<"." << "|" << endl; //rempli du caractere (' '), pdt 10 fois
+			cout << std::setfill('-') << std::setw(9)<< this->m_contacts[i].GetNickName().substr(0, 9)<<"." << "|" << endl;
 		else
-			cout << std::setfill('-') << std::setw(10)<< this->m_contacts[i].GetNickName() <<"|" << endl; //rempli du caractere (' '), pdt 10 fois
+			cout << std::setfill('-') << std::setw(10)<< this->m_contacts[i].GetNickName() <<"|" << endl; 
 	}
 	return (true);
 }
