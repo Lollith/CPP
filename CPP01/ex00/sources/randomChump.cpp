@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/09 10:03:54 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/09 19:07:58 by lollith          ###   ########.fr       */
+/*   Created: 2022/09/09 17:29:03 by lollith           #+#    #+#             */
+/*   Updated: 2022/09/09 19:07:48 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Zombie.hpp"
 
-# include <string>
-# include <iostream>
+void randomChump (std::string name)
+{
+	Zombie Zom;
 
-class Zombie {
-
-	public:
-
-		Zombie();
-		~Zombie();
-		
-		void announce(void);	
-		void setName(std::string name);
-
-	private:
-		std::string m_name;// a mettre en prive
-
-};
-
-#endif
+	Zom.setName(name);
+	Zom.announce(); // ici et non ds main pour que fonctionne
+}
+//=> ne peut pas etre utilise en dehors du scope

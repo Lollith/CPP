@@ -6,18 +6,31 @@
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 11:18:35 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/09 11:38:57 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/09 19:07:50 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include "Zombie.h"
 
 int main()
 {
-	Zombie nameI;
+	Zombie *newZom; // tas, rmplace mon instance par instance pointeur
+	Zombie *newZom1; // tas, rmplace mon instance par instance pointeur
+	Zombie Zom; // pile
 
-	nameI.m_name = "foo"; // utilisation var et methode ici => ne pas les mettre en privee
-	nameI.announce();
+	std::cout << "- Test allocation dynamique: "<< std::endl;
+	newZom = newZombie ("Zomzom1_tas");// le zomzon pourra exister en dehors du scope grace a lallocation dynamique
+	newZom->announce();
+	newZom1 = newZombie ("Zomzom2_tas");
+	newZom1->announce();
+	delete newZom; //appel du destructeur, le zonzon sera supprime uniquement a ce moment
+	delete newZom1;
 
-	return (0);
+	std::cout << std::endl;
+	std::cout << "- Test pile: "<< std::endl;
+	randomChump ("Zonz1_pile"); // appel du destructeur immediatement apres, le zonzon n existe plus apres le scope de la fct
+	randomChump ("Zonz2_pile");
+
+	return (0); // lance  le destructeur 
 }
