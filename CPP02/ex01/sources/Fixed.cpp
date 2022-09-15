@@ -6,7 +6,7 @@
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 13:35:52 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/15 18:24:53 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/15 18:34:49 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Fixed::Fixed( int const fixed ){
 
 Fixed::Fixed( float const fixed){
 	std::cout << "Float constructor called" << std::endl;
-	this->m_fixed = round (fixed * (1 <<fractional_bits));
+	this->m_fixed = roundf (fixed * (1 <<fractional_bits));
 }
 
 Fixed::Fixed(const Fixed &nbFixedAcopier){
