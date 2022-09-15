@@ -6,7 +6,7 @@
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 13:17:02 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/14 18:24:28 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/15 17:07:38 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Fixed {
 	private:
 	
 		int m_fixed;
-		static const int m_bits = 8;
+		static const int _bits;
 
 };
 

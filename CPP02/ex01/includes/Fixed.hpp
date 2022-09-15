@@ -6,7 +6,7 @@
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 13:17:02 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/14 20:49:10 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/15 18:24:59 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ class Fixed {
 	private:
 	
 		int m_fixed;
-		static const int m_bits = 8;
+		static const int fractional_bits; // non membre=> static
 
 };
 
-//&operator<<(const Fixed &other);
+std::ostream &	operator<<( std::ostream & o, const Fixed &rhs);
 
 #endif
