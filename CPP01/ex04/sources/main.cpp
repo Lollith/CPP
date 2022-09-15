@@ -6,7 +6,7 @@
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 15:02:32 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/13 16:07:30 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/15 10:23:08 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,11 @@ void ft_replace(const char *av[], std::string& texte, size_t& found)
 	std::string const av_s2(av[2]);
 	std::string const av_s3(av[3]);
 
-	texte.erase(found, av_s2.length());
 	if (av_s3.size() != 0)
-		texte.insert(found ,av_s3);
+		{
+			texte.erase(found, av_s2.length());
+			texte.insert(found ,av_s3);
+		}
 	else
 		texte.erase(found, av_s2.length()); // choix d ecraser de la taille du nouveau mot
 }
@@ -66,13 +68,12 @@ void ft_find(const char *av[], std::ifstream& fdin, std::ofstream& fdout)
 	size_t found = 0; // find retrun npos si rien trouver//npos =valeur la plus grande pour size_t=> until the end of the string
 	
 	getline(fdin, texte);
-	if (texte.length() == 0) // si texte vide
-	{
-		if (char_len(av[3]) != 0)
-			fdout << av[3] << endl;
-		//if (!char_len(av[2]) && !char_len(av[3]))
-		fdout << endl;
-	}
+	if (texte.length() == 0) // si texte vide ou fdin.peek() = eof 
+	 {
+		 if (char_len(av[2]) == 0 && char_len(av[3]) != 0)
+			 fdout << av[3] << endl;
+		 fdout << endl;
+	 }
 	do
 	{
 		found = 0;
@@ -84,23 +85,31 @@ void ft_find(const char *av[], std::ifstream& fdin, std::ofstream& fdout)
 		}
 		fdout << texte << endl;//remet ma string ds mon fichier copier
 	} while(getline(fdin, texte));
-		
 }
-
-
 
 int main (int ac, const char *av[])
 {
 	std::ofstream fdout; // crrer mon flux out
 	std::ifstream fdin;
+	std::string const av_s2(av[2]);
+	std::string const av_s3(av[3]);
+	
 	if (ac != 4)
 	{
 		cout <<"3 parameters: file, s1, s2" << endl;
 		return(1);
 	}
+	if (av_s2.length() != 0 && av_s2 == av_s3)
+	{
+		cout << "No Way" << endl;
+		return(1);
+	}
 	fdin.open(av[1],std::ios::in); //ouvre mon fichier initial et copie mon texte ds une string
 	if(!fdin.is_open()) // ifstream::is_open()check louverture du fichier
 		return (error_open());
+	fdin.peek();
+	if(fdin.rdstate())
+		std::cerr << "File empty or directory- file.replace is create anyway" << std::endl;
 	create_file(av[1], fdout);
 	if(!fdout.is_open()) // ifstream::is_open()check louverture du fichier
 		return (error_open());

@@ -1,22 +1,52 @@
 #! /bin/bash
 
 s1[0]="brain"
-s1[1]="lapin"
 s2[0]="cerveau"
+
+s1[1]="lapin"
 s2[1]="cerveau"
+
+s1[2]="brain"
+s2[2]="brain"
 
 fin=2
 i=0
-nb_test=2
+nb_test=3
 
 RED='\033[31m'
 NC='\033[0m' # No Color
 B='\033[34m'
+Y='\033[33m'
 
 make
-echo Pas de fichier :
+echo ____________________________________________________
+echo -e "$Y Pas de fichier : $NC"
 ./replace texte_inexistant ${s1[i]} ${s2[i]}
+echo ____________________________________________________
+
+echo -e "$Y Dossier a la place d un fichier: $NC"
+./replace sources ${s1[i]} ${s2[i]}
+echo Nouveau texte:
+cat sources.replace.txt
+rm sources.replace.txt
+echo ____________________________________________________
+
+echo texte:
+cat texte
 echo $'\n'
+echo -e "$Y Nouveau texte si chaines vides: $NC"
+./replace texte \"\" \"\"
+cat texte.replace.txt
+echo $'\n'
+echo -e "$Y Nouveau texte si s1 vide: $NC"
+./replace texte \"\" lapin
+cat texte.replace.txt
+echo $'\n'
+echo -e "$Y Nouveau texte si s2 vide: $NC"
+./replace texte brain \"\"
+cat texte.replace.txt
+
+echo ____________________________________________________
 
 while ((i < nb_test))
 do
@@ -28,9 +58,9 @@ do
 	cat texte.replace.txt
 	echo ____________________________________________________
 
+	rm texte.replace.txt
 	((i+=1))
 done
 echo A tester : 2 chaines vides, s1 vide, s2 vide
 echo fichier vide.txt "" ade
 echo fichier vide.txt "" ""
-##rm texte.replace.txt
