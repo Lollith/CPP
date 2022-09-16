@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/09 10:06:13 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/16 14:44:36 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,11 @@ bool Phonebook::add(void)
 void Phonebook::display_table(void)
 {
 	cout <<std::setfill('-') << std::setw(46)<< " " << endl;
-	cout <<  "|" ; 
+	cout <<  "|" ;
 	cout << std::setfill(' ') << std::setw(10) << "index   " << "|" ; // setfill initialise avant chqsue setw
-	cout << std::setfill(' ') << std::setw(10) << "first_name" << "|"; 
-	cout << std::setfill(' ') << std::setw(10) << "last_name" << "|"; 
-	cout << std::setfill(' ') << std::setw(10) << "nickname " << "|" << endl; 
+	cout << std::setfill(' ') << std::setw(10) << "first_name" << "|";
+	cout << std::setfill(' ') << std::setw(10) << "last_name" << "|";
+	cout << std::setfill(' ') << std::setw(10) << "nickname " << "|" << endl;
 	cout <<std::setfill('-') << std::setw(46)<< " " << endl;
 }
 
@@ -64,22 +64,22 @@ bool Phonebook::display(void) const
 {
 	for(int i = 0; i < 8; i ++)
 	{
-		cout << "|"<< std::setfill(' ') << std::setw(9) << i + 1 <<" |"; 
-		
+		cout << "|"<< std::setfill(' ') << std::setw(9) << i + 1 <<" |";
+
 		if (this->m_contacts[i].GetFirstName().length() > 10)
 			cout << std::setfill('-') << std::setw(9)<< this->m_contacts[i].GetFirstName().substr(0, 9)<<"." << "|"; //rempli du caractere (' '), pdt 10 fois
 		else
 			cout << std::setfill('-') << std::setw(10)<< this->m_contacts[i].GetFirstName() <<"|";
-		
+
 		if (this->m_contacts[i].GetLastName().length() > 10)
-			cout << std::setfill('-') << std::setw(9)<< this->m_contacts[i].GetLastName().substr(0, 9)<<"." << "|"; 
+			cout << std::setfill('-') << std::setw(9)<< this->m_contacts[i].GetLastName().substr(0, 9)<<"." << "|";
 		else
-			cout << std::setfill('-') << std::setw(10)<< this->m_contacts[i].GetLastName() <<"|"; 
-		
+			cout << std::setfill('-') << std::setw(10)<< this->m_contacts[i].GetLastName() <<"|";
+
 		if (this->m_contacts[i].GetNickName().length() > 10)
 			cout << std::setfill('-') << std::setw(9)<< this->m_contacts[i].GetNickName().substr(0, 9)<<"." << "|" << endl;
 		else
-			cout << std::setfill('-') << std::setw(10)<< this->m_contacts[i].GetNickName() <<"|" << endl; 
+			cout << std::setfill('-') << std::setw(10)<< this->m_contacts[i].GetNickName() <<"|" << endl;
 	}
 	return (true);
 }
@@ -93,7 +93,7 @@ bool Phonebook::search(void)
 		return (false);
 	std::stringstream (input) >> index_user;
 	if (index_user - 1 > 7 || index_user < 1 )
-		return(false);	
+		return(false);
 	cout << "First name: " << this->m_contacts[index_user - 1].GetFirstName() << endl;
 	cout << "Last name: " << this->m_contacts[index_user - 1].GetLastName() << endl;
 	cout << "Nickname: " << this->m_contacts[index_user - 1].GetNickName() << endl;
@@ -106,6 +106,8 @@ int Phonebook::enter_cmd(void){
 
 	std::cout << "enter ADD, SEARCH or EXIT: " << std::endl;
 	std::cin >> buff;
+	if(std::cin.eof())
+		return(false);
 	if("ADD" == buff || "add" == buff)
 		add();
 	else if("SEARCH" == buff || "search" == buff || "s" == buff)
@@ -122,5 +124,5 @@ int Phonebook::enter_cmd(void){
 			cout << "ERROR: Bad input" << endl;
 			return(true);
 		}
-	return (true);	
+	return (true);
 }
