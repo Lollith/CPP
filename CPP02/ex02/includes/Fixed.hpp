@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 13:17:02 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/16 15:49:22 by agouet           ###   ########.fr       */
+/*   Updated: 2022/09/20 12:01:28 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Fixed {
 		Fixed(const Fixed& nbFixedAcopier);
 		~Fixed(void);
 
-		Fixed& operator=( Fixed const& rhs);
+		Fixed  &operator=( Fixed const &rhs);
 
 		int 	getRawBits( void ) const;
 		void	setRawBits( int const raw );
@@ -46,10 +46,10 @@ class Fixed {
 		Fixed &operator--();
 		Fixed operator--( int );
 
-		static int min( int &fixed_l, int &fixed_r);
-		static int min( int const &fixed_l, int const &fixed_r);
+		static Fixed min( Fixed &fixed_l, Fixed &fixed_r);
+		static Fixed min( Fixed const &fixed_l, Fixed const &fixed_r);
 		static Fixed max( Fixed &fixed_l, Fixed &fixed_r);
-		static int max( int const &fixed_l, int const &fixed_r);
+		static Fixed max( Fixed const &fixed_l, Fixed const &fixed_r);
 
 	private:
 

@@ -6,18 +6,18 @@
 #    By: agouet <agouet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 16:40:46 by agouet            #+#    #+#              #
-#    Updated: 2022/09/20 11:51:05 by agouet           ###   ########.fr        #
+#    Updated: 2022/09/20 11:50:18 by agouet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	fixed
+NAME	=	claptrap
 
 CC		=	c++
 
 SRC_PATHS = ./sources/
 
 SRC		=	$(addprefix ./sources/,\
-				Fixed.cpp\
+				ClapTrap.cpp\
 				main.cpp)
 
 OBJ		=	$(SRC:./sources/%.cpp=./build/%.o)

@@ -6,44 +6,44 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 13:35:52 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/16 15:52:48 by agouet           ###   ########.fr       */
+/*   Updated: 2022/09/20 10:25:48 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cmath>
 #include <iostream>
 #include "Fixed.hpp"
-#include <cmath>
 
 /*----------------------------------------------------------------------------*/
 /*                 Constructors												  */
 /*----------------------------------------------------------------------------*/
 Fixed::Fixed( void ) : m_fixed(0) {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 	return;
 }
 
 Fixed::Fixed( int const fixed ){
-	std::cout << "Int constructor called" << std::endl;
-	this->m_fixed= (fixed * (1 << fractional_bits));
+	//std::cout << "Int constructor called" << std::endl;
+	this->m_fixed = (fixed * (1 << this->fractional_bits));
 }
 
 Fixed::Fixed( float const fixed ){
-	std::cout << "Float constructor called" << std::endl;
-	this->m_fixed = roundf (fixed * (1 <<fractional_bits));
+	//std::cout << "Float constructor called" << std::endl;
+	this->m_fixed = roundf (fixed * (1 << this->fractional_bits));
 }
 
 /*----------------------------------------------------------------------------*/
 /*						Destructor											  */
 /*----------------------------------------------------------------------------*/
 Fixed::~Fixed( void ) {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 
 /*----------------------------------------------------------------------------*/
 /*						Copy constructor                                      */
 /*----------------------------------------------------------------------------*/
 Fixed::Fixed( Fixed const& nbFixedAcopier ){
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 	*this = nbFixedAcopier;
 }
 
@@ -51,7 +51,7 @@ Fixed::Fixed( Fixed const& nbFixedAcopier ){
 /*						Copy assignment operator							  */
 /*----------------------------------------------------------------------------*/
 Fixed& Fixed::operator=( Fixed const& other ){
-	std::cout << "Copy assignment operator called" << std::endl;
+//	std::cout << "Copy assignment operator called" << std::endl;
 	this->m_fixed = other.getRawBits();
 	return(*this);
 }
@@ -81,8 +81,8 @@ int Fixed::toInt( void ) const{
 /*----------------------------------------------------------------------------*/
 /*					Operator redir flux										  */
 /*----------------------------------------------------------------------------*/
-std::ostream& operator<< (std::ostream& o, Fixed const &rhs){
-	o << rhs.toFloat();
+std::ostream& operator<< (std::ostream& o, Fixed const &instance){
+	o << instance.toFloat();
 	return (o);
 }
 
@@ -91,64 +91,46 @@ std::ostream& operator<< (std::ostream& o, Fixed const &rhs){
 /*----------------------------------------------------------------------------*/
 
 bool Fixed::operator>( Fixed const& rhs) const {
-	if ( this->m_fixed  > rhs.getRawBits())
-		return (true);
-	else
-		return (false);
+	return ( this->toFloat() > rhs.toFloat());
 }
 
 bool Fixed::operator<( Fixed const& rhs) const {
-	if ( this->m_fixed  < rhs.getRawBits())
-		return (true);
-	else
-		return (false);
+	return ( this->toFloat()  < rhs.toFloat());
 }
 
 bool Fixed::operator<=( Fixed const& rhs) const{
-	if ( this->m_fixed  <= rhs.getRawBits())
-		return (true);
-	else
-		return (false);
+	return ( this->toFloat()  <= rhs.toFloat());
 }
 
 bool Fixed::operator>=( Fixed const& rhs) const{
-	if ( this->m_fixed  >= rhs.getRawBits())
-		return (true);
-	else
-		return (false);
+	return ( this->toFloat()  >= rhs.toFloat());
 }
 
 bool Fixed::operator==( Fixed const& rhs) const{
-	if( this->m_fixed == rhs.getRawBits())
-		return (true);
-	else
-		return (false);
+	return ( this->toFloat() == rhs.toFloat());
 }
 
 bool Fixed::operator!=( Fixed const& rhs) const{
-	if( this->m_fixed != rhs.getRawBits())
-		return (true);
-	else
-		return (false);
+	return ( this->toFloat() != rhs.toFloat());
 }
 
 /*----------------------------------------------------------------------------*/
 /*				arithm Operator												  */
 /*----------------------------------------------------------------------------*/
 Fixed Fixed::operator+(Fixed const& rhs) const{
-	return (Fixed( this->m_fixed + rhs.getRawBits()));
+	return (Fixed( this->toFloat() + rhs.toFloat()));
 }
 
 Fixed Fixed::operator-(Fixed const& rhs) const{
-	return (Fixed( this->m_fixed - rhs.getRawBits()));
+	return (Fixed( this->toFloat() - rhs.toFloat()));
 }
 
 Fixed Fixed::operator*(Fixed const& rhs) const{
-	return (Fixed( this->m_fixed * rhs.getRawBits()));
+	return (Fixed( this->toFloat() * rhs.toFloat()));
 }
 
 Fixed Fixed::operator/(Fixed const& rhs) const{
-	return (Fixed( this->m_fixed / rhs.getRawBits()));
+	return (Fixed( this->toFloat() / rhs.toFloat()));
 }
 
 /*----------------------------------------------------------------------------*/
@@ -177,21 +159,21 @@ Fixed Fixed::operator--(int) {
 /*        AD-HOC polymorphism && static										  */
 /*----------------------------------------------------------------------------*/
 
-int Fixed::min( int const &fixed_l, int const &fixed_r){
+Fixed Fixed::min( Fixed const &fixed_l, Fixed const &fixed_r){
 	if (fixed_l > fixed_r)
 		return(fixed_r);
 	else
 		return(fixed_l);
 }
 
-int Fixed::min( int &fixed_l, int &fixed_r){
+Fixed Fixed::min( Fixed &fixed_l, Fixed &fixed_r){
 	if (fixed_l > fixed_r)
 		return(fixed_r);
 	else
 		return(fixed_l);
 }
 
-int Fixed::max( int const &fixed_l, int const &fixed_r){
+Fixed Fixed::max( Fixed const &fixed_l, Fixed const &fixed_r){
 	if (fixed_l > fixed_r)
 		return(fixed_l);
 	else
