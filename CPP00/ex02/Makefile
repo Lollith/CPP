@@ -6,19 +6,17 @@
 #    By: agouet <agouet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 16:40:46 by agouet            #+#    #+#              #
-#    Updated: 2022/09/21 12:05:39 by agouet           ###   ########.fr        #
+#    Updated: 2022/09/21 15:18:05 by agouet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	ScavTrap
-
+NAME	=	Account
 CC		=	c++
 
 SRC_PATHS = ./sources/
 
-SRC		=	$(addprefix ./sources/,\
-				ClapTrap.cpp\
-				ScavTrap.cpp\
+SRC		=	$(addprefix ./sources/, \
+				Account.cpp \
 				main.cpp)
 
 OBJ		=	$(SRC:./sources/%.cpp=./build/%.o)

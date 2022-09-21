@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:54:02 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/20 17:15:17 by agouet           ###   ########.fr       */
+/*   Updated: 2022/09/21 15:04:57 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class ClapTrap{
 		void beRepaired(unsigned int amount);
 
 
-	private:
+	protected:
 
 		std::string		m_name;
 		unsigned int 	m_hit_points;

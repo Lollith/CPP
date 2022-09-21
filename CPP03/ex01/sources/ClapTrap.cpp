@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:54:31 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/20 16:06:01 by agouet           ###   ########.fr       */
+/*   Updated: 2022/09/21 14:47:24 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 
 //---------------------------Canonic-----------------------------------------------------------
 ClapTrap::ClapTrap( void ){
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Claptrap- Default constructor called" << std::endl;
 	return;
 }
 
 ClapTrap::ClapTrap( ClapTrap const &copy ){
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap- Copy constructor called" << std::endl;
 	*this = copy;
 }
 
 ClapTrap &ClapTrap::operator=( ClapTrap const &rhs ){
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap- Copy assignment operator called" << std::endl;
 	this->m_name = rhs.m_name;
 	this->m_hit_points = rhs.m_hit_points;
 	this->m_energy_points = rhs.m_energy_points;
@@ -34,14 +34,14 @@ ClapTrap &ClapTrap::operator=( ClapTrap const &rhs ){
 }
 
 ClapTrap::~ClapTrap( void ){
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "claptrap- Destructor called" << std::endl;
 	return;
 }
 
 
 //------------------------surcharge ----------------------------------------------------------------------
-ClapTrap::ClapTrap( std::string name ) : m_name(name), m_hit_points(10), m_energy_points(10), m_attack_damage(0){
-	std::cout << "Constructor called. " << this->m_name << " is created"<<std::endl;
+ClapTrap::ClapTrap( std::string name ) : m_name(name), m_hit_points(100), m_energy_points(50), m_attack_damage(20){
+	std::cout << "Claptrap- Constructor called. " << this->m_name << " is created"<<std::endl;
 	return;
 }
 
