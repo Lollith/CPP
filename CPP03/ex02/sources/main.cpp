@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 16:52:54 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/22 12:21:57 by lollith          ###   ########.fr       */
+/*   Created: 2022/09/20 11:54:54 by agouet            #+#    #+#             */
+/*   Updated: 2022/09/22 14:30:08 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-
-#include <string>
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
-class ScavTrap : public ClapTrap{
+int main(){
 
-	public:
-
-		ScavTrap( void );
-		ScavTrap( ScavTrap const &copy );
-		ScavTrap &operator=( ScavTrap const &rhs );
-		~ScavTrap( void );
-
-	ScavTrap(std::string name);
-	void attack(const std::string &target);
-	void guardGate();
-
-};
-
-#endif
+	FragTrap bot2("Bot");
+	bot2.attack("bear");
+	bot2.takeDamage(40);
+	bot2.beRepaired(10);
+	bot2.highFivesGuys();
+	return 0;
+}
