@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/16 14:44:36 by agouet           ###   ########.fr       */
+/*   Updated: 2022/09/22 10:49:56 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,20 @@ bool Phonebook::add(void)
 {
 	if ( index < 8)
 	{
-		this->m_contacts[index].SetFirstName();
+		if(!this->m_contacts[index].SetFirstName())
+			return false;
 		this->m_contacts[index].SetLastName();
+		if(std::cin.eof())
+			return 0;
 		this->m_contacts[index].SetNickName();
+		if(std::cin.eof())
+			return 0;
 		this->m_contacts[index].SetNumber();
+		if(std::cin.eof())
+			return 0;
 		this->m_contacts[index].SetDark();
+		if(std::cin.eof())
+			return 0;
 	}
 	index++;
 	if (index == 8)
@@ -104,25 +113,29 @@ bool Phonebook::search(void)
 
 int Phonebook::enter_cmd(void){
 
-	std::cout << "enter ADD, SEARCH or EXIT: " << std::endl;
-	std::cin >> buff;
-	if(std::cin.eof())
-		return(false);
-	if("ADD" == buff || "add" == buff)
-		add();
-	else if("SEARCH" == buff || "search" == buff || "s" == buff)
+		if(std::cin.eof())
+			return 0;
+		std::cout << "enter ADD, SEARCH or EXIT: " << std::endl;
+		std::cin >> buff;
+		if(std::cin.eof())
+			return(false);
+		if("ADD" == buff || "add" == buff)
+			add();
+		else if("SEARCH" == buff || "search" == buff || "s" == buff)
 		{
 			display_table();
 			display();
 			if (!search())
 				std::cout << "Bad Index: enter 1 -> 8 " << std::endl;
 		}
-	else if("EXIT" == buff || "exit" == buff)
-		return (false);
-	else
+		else if("EXIT" == buff || "exit" == buff)
+			return (false);
+	
+		else 
 		{
 			cout << "ERROR: Bad input" << endl;
 			return(true);
 		}
-	return (true);
+
+		return (true);
 }

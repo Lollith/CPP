@@ -6,7 +6,7 @@
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/08 22:03:23 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/22 10:49:57 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,13 @@ std::string Contact::GetDark(void) const {
 	return this->m_darkest_secret;
 }
 
-void Contact::SetFirstName( ){
+bool Contact::SetFirstName( ){
 
 		std::cout << "First_name: ";
 		std::cin >> this->m_first_name;
-		return;
+		if(std::cin.eof())
+			return false;
+		return true;
 }
 
 void Contact::SetLastName( ){

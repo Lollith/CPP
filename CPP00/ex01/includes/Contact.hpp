@@ -6,7 +6,7 @@
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/09 11:07:11 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/22 10:49:58 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Contact
 		Contact(void);
 		~Contact(void);
 
-		void SetFirstName();
+		bool SetFirstName();
 		void SetLastName();
 		void SetNickName();
 		void SetNumber();
