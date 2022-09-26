@@ -5,35 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 13:20:21 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/26 11:43:39 by agouet           ###   ########.fr       */
+/*   Created: 2022/09/13 17:21:30 by lollith           #+#    #+#             */
+/*   Updated: 2022/09/26 11:26:17 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include "Harl.hpp"
 
-int main()
+int main (int ac, char **av)
 {
-		const Animal* dog = new Dog();
-		const Animal* cat = new Cat();
-		delete(cat);
-		delete(dog);
+	Harl level;
+	int i = 0;
 
-std::cout << "----------------------------------------"<< std::endl;
-	Animal *animals[10];
-	for (int i = 0; i < 5; i++)
-		animals[i] = new Dog();
-	for (int i = 5; i< 10; i++)
-		animals[i] =  new Cat();
+	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-
-	for (int i = 0; i < 10; i++)
-		std::cout << animals[i]->getType() << " ";
-	std::cout << std::endl;
-
-	for (int i = 0; i < 10; i++)
-		delete animals[i];
-
-	return 0;
+	if (ac != 2)
+		std::cout << "Enter 1 parameter" << std:: endl;
+	else
+	{
+		while ( i < 4 && levels[i] != av[1])
+			i++;
+		switch(i)
+		{
+			case 0:
+				level.complain("debug");
+			case 1:
+				level.complain("info");
+			case 2:
+				level.complain("warning");
+			case 3:
+				level.complain("error");
+		}
+	}
 }

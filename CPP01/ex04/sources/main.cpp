@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 15:02:32 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/15 10:23:08 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/26 14:30:20 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int ft_close(std::ofstream& fdout, std::ifstream& fdin)
 void create_file(char const *av1, std::ofstream& fdout)//ref a fdout
 {
 	std::string av_s(av1);// char* av[1] devient string]
-	
+
 	std::string rep =".replace.txt"; // "" +> string
 	std::string const file = av_s + rep; // les operateurs marche sur les string// pas sur les char *
 	char const *file2 = file.c_str();// la fct c_str reconverti en char * car open marche en char* , c_str utile juste en c++98
@@ -66,9 +66,9 @@ void ft_find(const char *av[], std::ifstream& fdin, std::ofstream& fdout)
 {
 	std::string texte;
 	size_t found = 0; // find retrun npos si rien trouver//npos =valeur la plus grande pour size_t=> until the end of the string
-	
+
 	getline(fdin, texte);
-	if (texte.length() == 0) // si texte vide ou fdin.peek() = eof 
+	if (texte.length() == 0) // si texte vide ou fdin.peek() = eof
 	 {
 		 if (char_len(av[2]) == 0 && char_len(av[3]) != 0)
 			 fdout << av[3] << endl;
@@ -78,7 +78,7 @@ void ft_find(const char *av[], std::ifstream& fdin, std::ofstream& fdout)
 	{
 		found = 0;
 		while (found != std::string::npos && char_len(av[2]))
-		{	
+		{
 			found = texte.find(av[2]); // find retrun npos si rien trouver//npos =valeur la plus grande pour size_t=> until the end of the string
 			if (found != std::string::npos)	//taille found differente de la  taille de la ligne complete
 				 ft_replace(av, texte, found);
@@ -93,7 +93,7 @@ int main (int ac, const char *av[])
 	std::ifstream fdin;
 	std::string const av_s2(av[2]);
 	std::string const av_s3(av[3]);
-	
+
 	if (ac != 4)
 	{
 		cout <<"3 parameters: file, s1, s2" << endl;
@@ -109,7 +109,7 @@ int main (int ac, const char *av[])
 		return (error_open());
 	fdin.peek();
 	if(fdin.rdstate())
-		std::cerr << "File empty or directory- file.replace is create anyway" << std::endl;
+		std::cerr << "File empty or directory- file.replace is created anyway" << std::endl;
 	create_file(av[1], fdout);
 	if(!fdout.is_open()) // ifstream::is_open()check louverture du fichier
 		return (error_open());
