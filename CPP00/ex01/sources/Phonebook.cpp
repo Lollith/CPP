@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/27 12:19:47 by agouet           ###   ########.fr       */
+/*   Updated: 2022/09/27 12:49:19 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,8 @@ bool Phonebook::check_digit(std::string s)const
 {
 	for( unsigned int i = 0; i < s.length(); i++)
 	{
-		if (isdigit(s[i]) == true)
-		{
-			std::cout<< s[i] <<std::endl;
+		if (isdigit(s[i]))
 			return (true);
-		}
 	}
 	return (false);
 }
