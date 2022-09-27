@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:34:07 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/26 16:14:36 by agouet           ###   ########.fr       */
+/*   Updated: 2022/09/27 14:32:22 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define AMATERIA_HPP
 
 # include <string>
+# include <iostream>
 
 class AMateria{
 

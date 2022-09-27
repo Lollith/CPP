@@ -6,11 +6,12 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 14:05:21 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/26 16:09:25 by agouet           ###   ########.fr       */
+/*   Updated: 2022/09/27 16:41:50 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 
 

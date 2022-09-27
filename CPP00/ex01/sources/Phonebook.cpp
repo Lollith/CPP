@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/27 12:49:19 by agouet           ###   ########.fr       */
+/*   Updated: 2022/09/27 15:46:11 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,11 @@ bool Phonebook::add(void)
 		this->m_contacts[index].SetLastName();
 		if(std::cin.eof())
 			return 0;
+		std::cin.ignore(100, '\n');
 		this->m_contacts[index].SetNickName();
-
 		if(std::cin.eof())
 			return 0;
+		std::cin.ignore(100, '\n');
 		this->m_contacts[index].SetNumber();
 		if(std::cin.eof())
 			return 0;
@@ -101,6 +102,7 @@ bool Phonebook::search(void)
 	std::cin >> input;
 	if (!check_digit(input))
 		return (false);
+	std::cin.ignore(100, '\n');
 	std::stringstream (input) >> index_user;
 	if (index_user - 1 > 7 || index_user < 1 )
 		return(false);
@@ -118,6 +120,7 @@ int Phonebook::enter_cmd(void){
 			return 0;
 		std::cout << "enter ADD, SEARCH or EXIT: " << std::endl;
 		std::cin >> buff;
+		std::cin.ignore(100, '\n');
 		if(std::cin.eof())
 			return(false);
 		if("ADD" == buff || "add" == buff)

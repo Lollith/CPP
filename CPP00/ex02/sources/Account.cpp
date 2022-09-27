@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 15:18:47 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/22 11:56:29 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/27 15:51:36 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 		Account::_totalAmount = Account::_totalAmount + _amount;
 		return;
 	}
-	
+
 	Account::Account( void ){
 		return;
 	}
@@ -62,7 +62,7 @@
 
 	void	Account::makeDeposit( int deposit ){
 		Account::_displayTimestamp();
-		std::cout << "index:" << this->_accountIndex << ";";
+		std::cout << " index:" << this->_accountIndex << ";";
 		std::cout << "p_amount:" <<  this->_amount << ";";
 		std::cout << "deposit:" << deposit << ";";
 		this->_amount += deposit;
@@ -75,7 +75,7 @@
 
 	bool	Account::makeWithdrawal( int withdrawal ){
 		Account::_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex << ";";
+	std::cout << " index:" << this->_accountIndex << ";";
 	std::cout << "p_amount:" <<  this->_amount << ";";
 	if (this->_amount < withdrawal)
 	{
@@ -109,7 +109,7 @@
 	}
 
 	void	Account::_displayTimestamp( void ){
-		
+
 		char buffer [80];
 		time_t rawtime;
 		struct tm *timeinfo;

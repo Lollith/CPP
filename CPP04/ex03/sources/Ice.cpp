@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 14:47:29 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/26 16:05:54 by agouet           ###   ########.fr       */
+/*   Updated: 2022/09/27 16:53:18 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ Ice::~Ice(){
 
 //----------------------------------------------------------------------------------
 
-Ice::Ice(std::string const &type): AMateria(type){
+Ice::Ice(std::string const &type): AMateria(type), m_type("ice"){
+	std::cout << m_type <<std::endl;
 	return;
 }
 

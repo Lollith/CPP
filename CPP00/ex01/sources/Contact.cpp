@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/22 10:49:57 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/27 15:46:30 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ std::string Contact::GetDark(void) const {
 }
 
 bool Contact::SetFirstName( ){
-
 		std::cout << "First_name: ";
 		std::cin >> this->m_first_name;
 		if(std::cin.eof())
 			return false;
+		std::cin.ignore(100, '\n');
 		return true;
 }
 
@@ -66,13 +66,13 @@ void Contact::SetNickName( ){
 void Contact::SetNumber( ){
 
 		std::cout << "Number: ";
-		std::cin >> this->m_number;
+		std::getline(std::cin, this->m_number);
 		return;
 }
 
 void Contact::SetDark( ){
 
 		std::cout << "Darkest_secret: ";
-		std::cin >> this->m_darkest_secret;
+		std::getline(std::cin, this->m_darkest_secret);
 		return;
 }
