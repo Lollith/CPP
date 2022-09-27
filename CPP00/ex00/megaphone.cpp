@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/08/23 20:42:12 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/27 11:08:03 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstring>
+#include <string>
 
 int main (int ac, char const **av)
 {

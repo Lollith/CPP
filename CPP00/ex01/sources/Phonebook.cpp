@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:40:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/22 10:49:56 by lollith          ###   ########.fr       */
+/*   Updated: 2022/09/27 12:19:47 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,13 @@ Phonebook::~Phonebook(void){
 
 bool Phonebook::check_digit(std::string s)const
 {
-	for( unsigned i = 0; i < s.length(); i++)
+	for( unsigned int i = 0; i < s.length(); i++)
 	{
 		if (isdigit(s[i]) == true)
+		{
+			std::cout<< s[i] <<std::endl;
 			return (true);
+		}
 	}
 	return (false);
 }
@@ -43,6 +46,7 @@ bool Phonebook::add(void)
 		if(std::cin.eof())
 			return 0;
 		this->m_contacts[index].SetNickName();
+
 		if(std::cin.eof())
 			return 0;
 		this->m_contacts[index].SetNumber();
@@ -130,8 +134,8 @@ int Phonebook::enter_cmd(void){
 		}
 		else if("EXIT" == buff || "exit" == buff)
 			return (false);
-	
-		else 
+
+		else
 		{
 			cout << "ERROR: Bad input" << endl;
 			return(true);
