@@ -6,11 +6,11 @@
 #    By: lollith <lollith@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 16:40:46 by agouet            #+#    #+#              #
-#    Updated: 2022/09/30 11:10:15 by lollith          ###   ########.fr        #
+#    Updated: 2022/09/29 20:23:11 by lollith          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	bureaucrat
+NAME	=	formulaires
 
 CC		=	c++
 
@@ -18,6 +18,7 @@ SRC_PATHS = ./sources/
 
 SRC		=	$(addprefix ./sources/,\
 				Bureaucrat.cpp\
+				Form.cpp\
 				main.cpp)
 
 OBJ		=	$(SRC:./sources/%.cpp=./build/%.o)

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lollith <lollith@student.42.fr>            +#+  +:+       +#+         #
+#    By: agouet <agouet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 16:40:46 by agouet            #+#    #+#              #
-#    Updated: 2022/09/30 11:10:15 by lollith          ###   ########.fr        #
+#    Updated: 2022/09/29 12:14:43 by agouet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRC_PATHS = ./sources/
 
 SRC		=	$(addprefix ./sources/,\
 				Bureaucrat.cpp\
+				MyException.cpp\
 				main.cpp)
 
 OBJ		=	$(SRC:./sources/%.cpp=./build/%.o)
