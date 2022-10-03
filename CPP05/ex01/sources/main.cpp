@@ -3,48 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 09:49:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/30 10:57:12 by lollith          ###   ########.fr       */
+/*   Updated: 2022/10/03 16:49:40 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Bureaucrat.hpp"
+# include "Form.hpp"
 
 int main(){
 	Bureaucrat bob;
 	std::cout << bob << std::endl;
-	try
-	{
-		Bureaucrat bill("Bill", 50);
-		std::cout << bill << std::endl;
-		bill.decrement(20);
-		std::cout << bill << std::endl;
-	}
-	catch(std::exception const &myexeption){
-		std::cerr <<  "Error: " << myexeption.what() << std::endl;
-	}
+	Bureaucrat bill("Bill", 50);
+	std::cout << bill << std::endl;
+	bill.decrement(20);
+	std::cout << bill << std::endl;
+try{
+	Form A("A1", 80, 20);
+	std::cout << A << std::endl;
+	A.beSigned(bill);
+	std::cout << A.getBeSigned() << std::endl;
+}
+catch(std::exception const &myexception){
+	std::cerr << "Error: " << myexception.what()<<std::endl;
 
-	try{
-
-		Bureaucrat bill("Bill", 50);
-		bill.increment(500);
-		std::cout << bill << std::endl;
-	}
-	catch(std::exception const &myexeption){
-		std::cerr <<  "Error: " << myexeption.what() << std::endl;
-	}
-
-	try
-	{
-		Bureaucrat bill("Bill", 200);
-		std::cout << bill << std::endl;
-	}
-	catch(std::exception const &myexeption){
-		std::cerr << "Error: " << myexeption.what() << std::endl;
-	}
-
-
+}
 	return 0;
 }

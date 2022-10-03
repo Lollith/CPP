@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:23:54 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/30 11:03:51 by lollith          ###   ########.fr       */
+/*   Updated: 2022/10/03 17:01:58 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
+#include "Form.hpp"
 //exception
 const char *Bureaucrat::GradeTooHighException::what() const throw(){
 	return("Grade too hight");
@@ -19,10 +19,9 @@ const char *Bureaucrat::GradeTooHighException::what() const throw(){
 
 const char *Bureaucrat::GradeTooLowException::what() const throw(){
 	return("Grade too low");
-} 
-
+}
+//--------------------------- membres------------------------------
 void Bureaucrat::increment(int grade){
-	std::cout << "try: increment " << " " << grade<< std::endl;
 	if (this->m_grade - grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else
@@ -31,17 +30,19 @@ void Bureaucrat::increment(int grade){
 
 void Bureaucrat::decrement(int grade)
 {
-	std::cout << "try: decrement " << " " << grade<< std::endl;
 	if (this->m_grade + grade > 150)
 		throw Bureaucrat::GradeTooLowException();
 	else
 		this->m_grade += grade;
 }
 
+void Bureaucrat::signForm(Form formulaire){
+	if(formulaire.getBeSigned())
+		std::cout << m_name << " signed ";
+}
 //------------------------------surcharge------------------------------
 
 Bureaucrat::Bureaucrat(std::string name, int grade): m_name(name){
-	std::cout << "try: " << m_name << " " << grade<< std::endl;
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else if (grade > 150)
@@ -61,7 +62,7 @@ Bureaucrat::~Bureaucrat(){
 	return;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const&copy){
+Bureaucrat::Bureaucrat(Bureaucrat const& copy){
 	*this = copy;
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:24:33 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/30 10:46:08 by lollith          ###   ########.fr       */
+/*   Updated: 2022/10/03 16:56:15 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Bureaucrat{
 		class GradeTooLowException: public std::exception{
 			virtual const char *what() const throw();
 		};
-	
+
 
 	//canonic
 		Bureaucrat( void );
@@ -43,6 +43,7 @@ class Bureaucrat{
 	//fct membres
 		void increment(int grade);
 		void decrement(int grade);
+		void signForm(Form formulaire);
 
 
 	private:
