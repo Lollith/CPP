@@ -6,7 +6,7 @@
 /*   By: agritech <agritech@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 18:49:59 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/04 13:34:20 by agritech         ###   ########.fr       */
+/*   Updated: 2022/10/04 16:35:47 by agritech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 class Bureaucrat;
 
-class Form{
+class Form{ //devient abstaite
 
 	public:
 	//classes internes
@@ -31,7 +31,7 @@ class Form{
 
 	//canonic
 		Form();
-		~Form();
+		virtual ~Form();
 		Form(Form const &copy);
 		Form &operator=(Form const &rhs);
 //surcharge
@@ -44,10 +44,14 @@ class Form{
 		int getGrade_exec( void ) const;
 
 		//fct membres
-		void beSigned( Bureaucrat &bureaucrat );
+		void beSigned( Bureaucrat &bureaucrat);
+
+		virtual void create( std::string const target )const = 0;
+		virtual void execute( Bureaucrat const &executor )const = 0;
 
 
-	private:
+
+	protected: // car devient mere
 		std::string const 	m_name;
 		bool 				m_beSigned;
 		int	const			m_grade_sign;

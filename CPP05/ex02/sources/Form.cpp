@@ -6,7 +6,7 @@
 /*   By: agritech <agritech@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 21:24:58 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/04 13:34:14 by agritech         ###   ########.fr       */
+/*   Updated: 2022/10/04 16:29:23 by agritech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int Form::getGrade_exec( void ) const{
 
 //----------------------------------fct membres---------------------------------
 void Form::beSigned( Bureaucrat &bureaucrat){
-	if (bureaucrat.getGrade() >this->m_grade_sign)
+	if (bureaucrat.getGrade() > this->m_grade_sign)
 	{
 		bureaucrat.signForm(*this);
 		throw Form::GradeTooLowException();
