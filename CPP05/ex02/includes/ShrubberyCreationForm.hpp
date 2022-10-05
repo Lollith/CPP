@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agritech <agritech@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:27:41 by agritech          #+#    #+#             */
-/*   Updated: 2022/10/04 17:17:20 by agritech         ###   ########.fr       */
+/*   Updated: 2022/10/05 15:42:20 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@
 #include "Bureaucrat.hpp"
 class ShrubberyCreationForm: public Form{
     public:
+        //classes internes
+        
         //canonic
         ShrubberyCreationForm();
-        ~ShrubberyCreationForm();
+        virtual ~ShrubberyCreationForm();
         ShrubberyCreationForm( ShrubberyCreationForm const &copy);
         ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
         
@@ -29,10 +31,8 @@ class ShrubberyCreationForm: public Form{
         //fct membre
 
         virtual void create(std::string target) const;
-		virtual void execute( Bureaucrat const &executor )const;
 
     private: 
-        std::string const m_target;
 };
 
 # endif

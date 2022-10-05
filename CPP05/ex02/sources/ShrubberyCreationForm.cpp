@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agritech <agritech@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:37:31 by agritech          #+#    #+#             */
-/*   Updated: 2022/10/04 17:15:46 by agritech         ###   ########.fr       */
+/*   Updated: 2022/10/05 17:00:41 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 
 using std::cout;
 using std::endl;
+
+//----------------------------------classes internes---------------------------
+
 //--------------------------------------------------------- canonic------------
 ShrubberyCreationForm::ShrubberyCreationForm(){
     return;
@@ -35,14 +38,15 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 }
 
 //----------------------------------------------surcharge------------------------
-ShrubberyCreationForm::ShrubberyCreationForm(std::string const target) : Form("Shrubbery Creation Form", 145, 137 ), m_target(target){
+ShrubberyCreationForm::ShrubberyCreationForm(std::string const target) : Form("Shrubbery Creation Form", 145, 137, target ){
     return;
 }
 
 void ShrubberyCreationForm::create(std::string const target) const{
     std::ofstream fdout;
     std::string const file = target + "_shrubbery";
-    fdout.open(file, std::ios::out);
+    char const *file2 = file.c_str();
+    fdout.open(file2, std::ios::out);
 fdout << "         * " << endl;
 fdout << "        /|\\"<< endl;
 fdout << "       /*|O\\" << endl;
@@ -56,12 +60,11 @@ fdout << "/O/X/*/O/|\\X\\*\\O\\X\\" << endl;
 fdout << "        |X|" << endl;
 fdout << "        |X|" << endl;
 fdout << endl;
+    fdout.close();
+    std::cout << file2 << "is created" << std::endl;
 }
 		
-void ShrubberyCreationForm::execute( Bureaucrat const &executor )const{
-        if (this->getBeSigned() && executor.getGrade() > this->m_grade_exec )
-            create(this->m_target);
+
 
 
     
-}

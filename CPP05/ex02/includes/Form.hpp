@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agritech <agritech@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 18:49:59 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/04 16:35:47 by agritech         ###   ########.fr       */
+/*   Updated: 2022/10/05 17:10:34 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ class Form{ //devient abstaite
 		class GradeTooLowException: public std::exception{
 			virtual const char *what() const throw();
 		};
+        
+		class IsNotSignedException: public std::exception{
+            virtual const char *what() const throw();
+        };
 
 	//canonic
 		Form();
@@ -35,19 +39,20 @@ class Form{ //devient abstaite
 		Form(Form const &copy);
 		Form &operator=(Form const &rhs);
 //surcharge
-		Form(std::string const name, int const grade_sign, int const grade_exec);
+		Form(std::string const name, int const grade_sign, int const grade_exec, std::string const target);
 	
 		//accessors/
 		std::string const getName( void ) const;
 		bool getBeSigned( void ) const;
 		int getGrade_sign( void ) const;
 		int getGrade_exec( void ) const;
+		void setBeSigned(int reinitialise);
 
 		//fct membres
 		void beSigned( Bureaucrat &bureaucrat);
 
 		virtual void create( std::string const target )const = 0;
-		virtual void execute( Bureaucrat const &executor )const = 0;
+		virtual bool execute( Bureaucrat const &executor )const;
 
 
 
@@ -56,6 +61,7 @@ class Form{ //devient abstaite
 		bool 				m_beSigned;
 		int	const			m_grade_sign;
 		int const			m_grade_exec;
+        std::string const 	m_target;
 
 };
 

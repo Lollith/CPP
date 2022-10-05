@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:23:54 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/03 17:01:58 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/05 16:56:17 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,26 @@ void Bureaucrat::decrement(int grade)
 
 void Bureaucrat::signForm(Form &formulaire){
 	if(formulaire.getBeSigned())
-		std::cout << this->m_name << " signed " << formulaire.getName() << std::endl;
+		std::cout << this->m_name << " signed the " << formulaire.getName() << std::endl;
 	else
-		std::cout << this->m_name << " couldn't sign " << formulaire.getName() << " because: " << formulaire << std::endl; 
+		std::cout << this->m_name << " couldn't sign the " << formulaire.getName() << " because: " << formulaire << std::endl; 
+}
+
+void Bureaucrat::executeForm( Form const &form ){
+	try{
+		form.execute(*this);
+		std::cout << "\"" << this->m_name << "\" executed " << form.getName() << std::endl;
+	}
+	catch( std::exception const &myE){
+		std::cout << this->m_name << " couldn't execut \"" << form.getName() << "\"";
+		if (form.getBeSigned())
+		{
+			std::cout <<" because: \""<< form.getName() << "\" is signed but ";
+			std::cout << form << std::endl;
+		}
+		else	
+			std::cerr << " because: " << myE.what() << std::endl;
+	}
 }
 //------------------------------surcharge------------------------------
 

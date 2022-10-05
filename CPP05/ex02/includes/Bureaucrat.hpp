@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agritech <agritech@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:24:33 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/04 17:13:13 by agritech         ###   ########.fr       */
+/*   Updated: 2022/10/05 15:45:37 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ class Bureaucrat{
 		void increment(int grade);
 		void decrement(int grade);
 		void signForm(Form &formulaire);
+		void executeForm(Form const &form);
 
 
 	private:

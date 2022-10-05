@@ -1,4 +1,7 @@
 {
 	"C_Cpp.dimInactiveRegions": false,
-	"C_Cpp.errorSquiggles": "EnabledIfIncludesResolve"
+	"C_Cpp.errorSquiggles": "EnabledIfIncludesResolve",
+	"files.associations": {
+		"ostream": "cpp"
+	}
 }
