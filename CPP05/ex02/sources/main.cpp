@@ -6,13 +6,15 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 09:49:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/05 17:11:39 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/06 14:28:15 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Bureaucrat.hpp"
 # include "Form.hpp"
-#include "ShrubberyCreationForm.hpp"
+# include "ShrubberyCreationForm.hpp"
+# include "RobotomyRequestForm.hpp"
+# include "PresidentialPardonForm.hpp"
 
 int main(){
 	
@@ -43,12 +45,35 @@ int main(){
  	std::cout << std::endl;
 
 	FormA.setBeSigned(0);
-	Bureaucrat bob("Bob", 50);
+	Bureaucrat bob("Bob", 40);
 	std::cout << bob << std::endl;
 	std::cout << "Try to sign and execut: " << std::endl;
 	FormA.beSigned(bob);
 	bob.executeForm(FormA);
+ 	
+	std::cout << std::endl;
+ 	std::cout << std::endl;
 	
+	RobotomyRequestForm FormB("Bill");
+	std::cout << bob << std::endl;
+	std::cout << "Try to sign and execut: " << std::endl;
+	FormB.beSigned(bob);
+	bob.executeForm(FormB);
+	std::cout << std::endl;
+	std::cout << "Try to execut again: " << std::endl;
+	bob.executeForm(FormB);
+
+
+	std::cout << std::endl;
+ 	std::cout << std::endl;
+	PresidentialPardonForm FormC ("Berth");
+	Bureaucrat boss("Boss", 1);
+	std::cout << boss << std::endl;
+	std::cout << "Try to sign and execut: " << std::endl;
+	FormC.beSigned(boss);
+	boss.executeForm(FormC);
+	
+
 	return 0;
 }
 

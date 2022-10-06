@@ -6,11 +6,11 @@
 #    By: agouet <agouet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 16:40:46 by agouet            #+#    #+#              #
-#    Updated: 2022/10/06 14:14:20 by agouet           ###   ########.fr        #
+#    Updated: 2022/10/06 14:35:39 by agouet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	formulaires
+NAME	=	intern
 
 CC		=	c++
 
@@ -22,6 +22,7 @@ SRC		=	$(addprefix ./sources/,\
 				ShrubberyCreationForm.cpp\
 				RobotomyRequestForm.cpp\
 				PresidentialPardonForm.cpp\
+				Intern.cpp\
 				main.cpp)
 
 OBJ		=	$(SRC:./sources/%.cpp=./build/%.o)
