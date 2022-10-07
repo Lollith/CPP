@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:47:47 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/06 17:39:22 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/07 11:45:52 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,29 +30,29 @@ Intern::Intern(Intern const& copy){
 
 Intern &Intern::operator=(Intern const &rhs)
 {
-	(void) rhs;
-	//if (this != &rhs)
-//		this->m_name = rhs.getName();
-
+	if (this != &rhs)
+		return(*this);
 	return(*this);
 }
 
 
 Form *Intern::makeForm(std::string nameForm, std::string target){
-	
-	Form *newForm = NULL;
-	Form *fct_member[] = { new RobotomyRequestForm(target), new ShrubberyCreationForm(target), new PresidentialPardonForm(target)};
+	RobotomyRequestForm robot(target);
+	ShrubberyCreationForm tree(target);
+	PresidentialPardonForm pres(target);
 
+	Form *fct_member[] = {&robot, &tree, &pres};
 	std::string funct_names[] = {"Robotomy Request Form", "Shrubbery Creation Form", "Presidential Pardon Form"};
 	
 	for(int i = 0; i < 3; i++)
 	{
 		if (funct_names[i] == nameForm)
-			newForm = fct_member[i]; //new + class
+		{	
+			std::cout << "Intern creates " << nameForm << " for " << target << std::endl;
+			return(fct_member[i]->newInstanceForm()); //new +class
+		}
 	}
-	// attention penser a delete car g creer des new pour chaque 
-	
+	std::cout << "Error: Intern doesn't recognize this form." << std::endl;
+	return(NULL);	
 
-	std::cout << "Intern creates " << nameForm << std::endl;
-		return(newForm);
 }

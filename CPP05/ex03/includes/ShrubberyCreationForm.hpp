@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:27:41 by agritech          #+#    #+#             */
-/*   Updated: 2022/10/05 15:42:20 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/07 11:00:35 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class ShrubberyCreationForm: public Form{
         //fct membre
 
         virtual void create(std::string target) const;
+		virtual Form *newInstanceForm( void ) const;
 
     private: 
 };

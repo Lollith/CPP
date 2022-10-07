@@ -33,6 +33,7 @@ class PresidentialPardonForm: public Form{
         //fct membre
 
         virtual void create(std::string target) const;
+		virtual Form *newInstanceForm( void ) const;
 
 	private:
 };

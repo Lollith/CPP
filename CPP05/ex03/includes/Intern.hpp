@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:36:10 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/06 17:23:57 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/07 10:39:36 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Intern{
 		Intern &operator=(Intern const &rhs);
 
 		Form *makeForm(std::string nameForm, std::string target);
+
 
 	private:
 

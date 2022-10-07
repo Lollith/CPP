@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:18:28 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/06 14:32:01 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/07 11:02:29 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,8 @@ PresidentialPardonForm::PresidentialPardonForm(std::string const target) : Form(
 
 void PresidentialPardonForm::create(std::string const target) const{
     std::cout << target << " was forgiven by Zaphod Beeblebrox" << std::endl;
+}
+
+Form *PresidentialPardonForm::newInstanceForm( void ) const {
+    return(new PresidentialPardonForm(this->m_target));
 }

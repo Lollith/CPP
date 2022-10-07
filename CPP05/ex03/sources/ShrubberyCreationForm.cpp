@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:37:31 by agritech          #+#    #+#             */
-/*   Updated: 2022/10/06 11:46:53 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/07 11:02:50 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,9 @@ fdout << endl;
     std::cout << file2 << " is created" << std::endl;
 }
 		
+Form *ShrubberyCreationForm::newInstanceForm( void ) const {
+    return(new ShrubberyCreationForm(this->m_target));
+}
 
 
 

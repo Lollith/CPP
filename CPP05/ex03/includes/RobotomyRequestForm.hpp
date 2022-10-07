@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:54:02 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/06 13:42:07 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/07 10:40:30 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class RobotomyRequestForm: public Form{
         //fct membre
 
         virtual void create(std::string target) const;
+		virtual Form *newInstanceForm( void ) const;
 
 	private:
 		static int m_count; 

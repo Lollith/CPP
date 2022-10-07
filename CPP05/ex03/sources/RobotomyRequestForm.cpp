@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:06:19 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/06 14:32:43 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/07 11:45:47 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ void RobotomyRequestForm::create(std::string const target) const{
 		throw std::string("Robotomisation failure");
 	else
 		std::cout << target << " has been robotomized" << std::endl;
+}
+		
+        
+Form *RobotomyRequestForm::newInstanceForm( void ) const {
+    return(new RobotomyRequestForm(this->m_target));
 }
 
 int RobotomyRequestForm::m_count = 1;

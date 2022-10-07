@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 18:49:59 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/06 11:43:01 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/07 10:40:36 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ class Form{ //devient abstaite
 
 		virtual void create( std::string const target )const = 0;
 		virtual bool execute( Bureaucrat const &executor )const;
+
+		virtual Form *newInstanceForm( void ) const = 0;
 
 
 
