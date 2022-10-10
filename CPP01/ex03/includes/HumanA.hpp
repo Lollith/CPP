@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 09:34:44 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/12 13:43:33 by lollith          ###   ########.fr       */
+/*   Updated: 2022/10/10 17:36:13 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class HumanA{
 	
 	private:
 
-	std::string m_name;// attention importance de lordre des attributs, ici name et ensuite le weapon , cf constructeur
+	std::string m_name;//
 	Weapon& m_weapon; // declaration reference
 
 	public:

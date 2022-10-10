@@ -35,16 +35,35 @@ echo texte:
 cat texte
 echo $'\n'
 echo -e "$Y Nouveau texte si chaines vides: $NC"
-./replace texte \"\" \"\"
+./replace texte "" ""
 cat texte.replace.txt
 echo $'\n'
 echo -e "$Y Nouveau texte si s1 vide: $NC"
-./replace texte \"\" lapin
+./replace texte "" lapin
 cat texte.replace.txt
 echo $'\n'
 echo -e "$Y Nouveau texte si s2 vide: $NC"
-./replace texte brain \"\"
+./replace texte brain ""
 cat texte.replace.txt
+
+echo ____________________________________________________
+
+echo -e "$Y vide.txt et chaines vides: $NC"
+./replace vide.txt "" ""
+cat vide.txt.replace.txt
+echo $'\n'
+echo -e "$Y Nouveau vide.txt si s1 vide: $NC"
+./replace vide.txt "" "ade"
+cat vide.txt.replace.txt
+echo $'\n'
+echo -e "$Y Nouveau vide.txt si s2 vide: $NC"
+./replace vide.txt "rien" ""
+cat vide.txt.replace.txt
+echo $'\n'
+echo -e "$Y Nouveau vide.txt "brain" "cerveau" $NC"
+./replace vide.txt "brain" "cerveau"
+cat vide.txt.replace.txt
+
 
 echo ____________________________________________________
 
@@ -58,9 +77,7 @@ do
 	cat texte.replace.txt
 	echo ____________________________________________________
 
-	rm texte.replace.txt
 	((i+=1))
 done
-echo A tester : 2 chaines vides, s1 vide, s2 vide
-echo fichier vide.txt "" ade
-echo fichier vide.txt "" ""
+	rm texte.replace.txt
+	rm vide.txt.replace.txt

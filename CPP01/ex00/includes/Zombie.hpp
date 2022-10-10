@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 10:03:54 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/09 19:07:58 by lollith          ###   ########.fr       */
+/*   Updated: 2022/10/10 17:12:06 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Zombie {
 		void setName(std::string name);
 
 	private:
-		std::string m_name;// a mettre en prive
+		std::string m_name;
 
 };
 

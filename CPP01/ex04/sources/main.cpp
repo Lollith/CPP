@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 15:02:32 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/26 14:30:20 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/10 18:14:59 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int ft_close(std::ofstream& fdout, std::ifstream& fdin)
 	return (0);
 }
 
-void create_file(char const *av1, std::ofstream& fdout)//ref a fdout
+void create_file(char const *av1, std::ofstream& fdout)
 {
-	std::string av_s(av1);// char* av[1] devient string]
+	std::string av_s(av1);// char* av[1] => string
 
-	std::string rep =".replace.txt"; // "" +> string
+	std::string rep =".replace.txt"; 
 	std::string const file = av_s + rep; // les operateurs marche sur les string// pas sur les char *
 	char const *file2 = file.c_str();// la fct c_str reconverti en char * car open marche en char* , c_str utile juste en c++98
 	fdout.open(file2, std::ios::out | std::ios::trunc);
@@ -45,10 +45,10 @@ void ft_replace(const char *av[], std::string& texte, size_t& found)
 	std::string const av_s3(av[3]);
 
 	if (av_s3.size() != 0)
-		{
-			texte.erase(found, av_s2.length());
-			texte.insert(found ,av_s3);
-		}
+	{
+		texte.erase(found, av_s2.length());
+		texte.insert(found ,av_s3);
+	}
 	else
 		texte.erase(found, av_s2.length()); // choix d ecraser de la taille du nouveau mot
 }
@@ -79,7 +79,7 @@ void ft_find(const char *av[], std::ifstream& fdin, std::ofstream& fdout)
 		found = 0;
 		while (found != std::string::npos && char_len(av[2]))
 		{
-			found = texte.find(av[2]); // find retrun npos si rien trouver//npos =valeur la plus grande pour size_t=> until the end of the string
+			found = texte.find(av[2]); 
 			if (found != std::string::npos)	//taille found differente de la  taille de la ligne complete
 				 ft_replace(av, texte, found);
 		}
@@ -89,7 +89,7 @@ void ft_find(const char *av[], std::ifstream& fdin, std::ofstream& fdout)
 
 int main (int ac, const char *av[])
 {
-	std::ofstream fdout; // crrer mon flux out
+	std::ofstream fdout;
 	std::ifstream fdin;
 	std::string const av_s2(av[2]);
 	std::string const av_s3(av[3]);
@@ -99,21 +99,21 @@ int main (int ac, const char *av[])
 		cout <<"3 parameters: file, s1, s2" << endl;
 		return(1);
 	}
+	fdin.open(av[1],std::ios::in); //ouvre mon fichier initial et copie mon texte ds une string
+	if(!fdin.is_open()) // ifstream::is_open()check louverture du fichier
+		return (error_open());
+	fdin.peek(); //return next character => check si dossier ou file
+	if(fdin.rdstate()) //perror
+		std::cerr << "File empty or directory- file.replace is created anyway" << std::endl;
 	if (av_s2.length() != 0 && av_s2 == av_s3)
 	{
 		cout << "No Way" << endl;
 		return(1);
 	}
-	fdin.open(av[1],std::ios::in); //ouvre mon fichier initial et copie mon texte ds une string
-	if(!fdin.is_open()) // ifstream::is_open()check louverture du fichier
-		return (error_open());
-	fdin.peek();
-	if(fdin.rdstate())
-		std::cerr << "File empty or directory- file.replace is created anyway" << std::endl;
 	create_file(av[1], fdout);
 	if(!fdout.is_open()) // ifstream::is_open()check louverture du fichier
 		return (error_open());
-	ft_find(av, fdin, fdout); // ref pas besoin de &
+	ft_find(av, fdin, fdout);
 	ft_close(fdout, fdin);
 	return (0);
 }

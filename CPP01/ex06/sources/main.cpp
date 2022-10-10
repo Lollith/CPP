@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 17:21:30 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/26 11:26:17 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/10 18:27:03 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ int main (int ac, char **av)
 
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-	if (ac != 2)
+	if (ac < 2)
 		std::cout << "Enter 1 parameter" << std:: endl;
+	
 	else
 	{
 		while ( i < 4 && levels[i] != av[1])

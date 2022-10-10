@@ -6,7 +6,7 @@
 #    By: agouet <agouet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 16:40:46 by agouet            #+#    #+#              #
-#    Updated: 2022/09/16 15:09:08 by agouet           ###   ########.fr        #
+#    Updated: 2022/10/10 17:36:13 by agouet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRC		=	$(addprefix ./sources/, \
 
 OBJ		=	$(SRC:./sources/%.cpp=./build/%.o)
 DEP		=	$(SRC:./sources/%.cpp=./build/%.d)
-CFLAGS	= 	-MMD -Wall -Wextra -Werror -std=c++98
+CFLAGS	= 	-MMD -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 INC		=	-I ./includes/
 
 

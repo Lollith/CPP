@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 11:18:35 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/09 19:07:50 by lollith          ###   ########.fr       */
+/*   Updated: 2022/10/10 17:08:33 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main()
 {
 	Zombie *newZom; // tas, rmplace mon instance par instance pointeur
-	Zombie *newZom1; // tas, rmplace mon instance par instance pointeur
+	Zombie *newZom1; 
 	Zombie Zom; // pile
 
 	std::cout << "- Test allocation dynamique: "<< std::endl;
