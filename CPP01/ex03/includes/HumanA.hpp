@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 09:34:44 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/10 17:36:13 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/11 16:28:53 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class HumanA{
 	private:
 
 	std::string m_name;//
-	Weapon& m_weapon; // declaration reference
+	Weapon &m_weapon; // declaration reference
 
 	public:
 	HumanA(std::string name, Weapon& weapon);

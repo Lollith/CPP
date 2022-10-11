@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 09:55:46 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/11 11:51:18 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/11 14:28:52 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 int main (int ac, char **av)
 {
+	int zero = 0;
 	if (ac != 2)
 	{
 		std::cout << "1 parameter!" << std::endl; 
@@ -26,12 +27,16 @@ int main (int ac, char **av)
 	size_t position_ = av1_s.find(".");
 	size_t pos_reel = av1_s.length() - position_ - 1;
 	if (position_ != std::string::npos)
-		std::cout << std::fixed<<std::setprecision(pos_reel);
+		std::cout << std::fixed << std::setprecision(pos_reel);
 	else
 	{
 		pos_reel = 0;	
-		std::cout << std::fixed<<std::setprecision(pos_reel );
+		std::cout << std::fixed << std::setprecision(pos_reel);
 	};
+
+	if(av[1][0] == '0' && av[1][1] && av[1][1] != '.')
+		zero = 1;
+	
 	//identification:
 	//converti
 	Convert scal(av[1]);
@@ -42,6 +47,11 @@ int main (int ac, char **av)
 	std::stringstream ssd;
 	std::stringstream ssc;
 	std::stringstream ssf;
+	if (zero == 1)
+	{
+		ssd << "0" ;
+		ssf << "0" ;
+	}
 	ssd << std::fixed << std::setprecision(pos_reel) << d;
 	std::string strd = ssd.str();
 	ssc << c;
@@ -49,13 +59,13 @@ int main (int ac, char **av)
 	ssf << std::fixed << std::setprecision(pos_reel - 1) << f << "f";
 	std::string strf = ssf.str();
 
-	 std::cout << strd << std::endl;
-	 std::cout << av[1] << std::endl;
+	  //std::cout << strf << std::endl;
+	 //std::cout << av[1] << std::endl;
 
 
 	if (strf == av[1])
 	{
-		std::cout << "char: '" << static_cast<char>(f) << "'"<<std::endl;
+		std::cout << "char: '" << static_cast<char>('*') << "'"<<std::endl;
 		std::cout << "int: " << static_cast<int>(f) << std::endl;
 		std::cout << "float: " << std::fixed << std::setprecision(pos_reel - 1) << static_cast<float>(f) << "f" << std::endl;
 		std::cout << "double: "<< f << std::endl;
@@ -79,10 +89,8 @@ int main (int ac, char **av)
 		std::cout << "double: "<< static_cast<double>(c) << std::endl;
 	}
 	else
-		std::cout << "only scalar" << std::endl;
+		std::cout << "not scalar or overflow" << std::endl;
 	
 	
 	return (0);
 }
-
-//strcode

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 09:16:25 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/12 13:57:57 by lollith          ###   ########.fr       */
+/*   Updated: 2022/10/11 17:45:33 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Weapon::~Weapon( void ){
 	return;
 }
 
-std::string Weapon::getType(void) const{
+std::string const Weapon::getType(void) const{
 	return (this->m_type);
 }
 

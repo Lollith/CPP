@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 09:16:48 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/10 17:27:30 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/11 17:45:48 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Weapon  {
 		Weapon(std::string type);
 		~Weapon();
 	
-		std::string getType(void) const;
+		std::string const getType(void) const;
 		void setType( std::string typex);
 };
 

@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 21:28:53 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/10 17:38:57 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/11 16:48:09 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,12 @@ int main()
 		jim.attack();
 		club.setType("some other type of club");
 		jim.attack();
+	}
+
+	{
+		// weapon initialised  NULL
+		HumanB joe("Joe");
+		joe.attack();
 	}
 	
 	return 0;

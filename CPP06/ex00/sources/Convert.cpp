@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:01:27 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/11 11:35:43 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/11 14:40:52 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Convert &Convert::operator=( Convert const &rhs){
 	return(*this);
 }
 
-Convert::Convert( std::string const scalaire ):_scalaire(scalaire), _d(0){
+Convert::Convert( std::string const scalaire ):_scalaire(scalaire), _d(0), _f(0){
 	return;
 }
 

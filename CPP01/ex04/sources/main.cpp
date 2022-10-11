@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 15:02:32 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/10 18:14:59 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/11 17:58:42 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,26 +94,26 @@ int main (int ac, const char *av[])
 	std::string const av_s2(av[2]);
 	std::string const av_s3(av[3]);
 
-	if (ac != 4)
+	if (ac == 4)
 	{
-		cout <<"3 parameters: file, s1, s2" << endl;
-		return(1);
-	}
-	fdin.open(av[1],std::ios::in); //ouvre mon fichier initial et copie mon texte ds une string
-	if(!fdin.is_open()) // ifstream::is_open()check louverture du fichier
-		return (error_open());
-	fdin.peek(); //return next character => check si dossier ou file
-	if(fdin.rdstate()) //perror
-		std::cerr << "File empty or directory- file.replace is created anyway" << std::endl;
-	if (av_s2.length() != 0 && av_s2 == av_s3)
-	{
-		cout << "No Way" << endl;
-		return(1);
-	}
-	create_file(av[1], fdout);
-	if(!fdout.is_open()) // ifstream::is_open()check louverture du fichier
-		return (error_open());
-	ft_find(av, fdin, fdout);
-	ft_close(fdout, fdin);
+		fdin.open(av[1],std::ios::in); //ouvre mon fichier initial et copie mon texte ds une string
+		if(!fdin.is_open()) // ifstream::is_open()check louverture du fichier
+			return (error_open());
+		fdin.peek(); //return next character => check si dossier ou file
+		if(fdin.rdstate()) //perror
+			std::cerr << "File empty or directory- file.replace is created anyway" << std::endl;
+		if (av_s2.length() != 0 && av_s2 == av_s3)
+		{
+			cout << "No Way" << endl;
+			return(1);
+		}
+		create_file(av[1], fdout);
+		if(!fdout.is_open()) // ifstream::is_open()check louverture du fichier
+			return (error_open());
+		ft_find(av, fdin, fdout);
+		ft_close(fdout, fdin);
+	}	
+	else
+		cout << "3 parameters: file, s1, s2" << endl;
 	return (0);
 }

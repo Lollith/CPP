@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 10:03:54 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/10 17:12:06 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/11 17:39:07 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Zombie {
 		void setName(std::string name);
 
 	private:
-		std::string m_name;
+		std::string m_name ;
 
 };
 
