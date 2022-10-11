@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 17:21:30 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/10 18:27:03 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/11 09:32:00 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main (int ac, char **av)
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	if (ac < 2)
-		std::cout << "Enter 1 parameter" << std:: endl;
+		std::cout << "Enter 1 parameter" << std::endl;
 	
 	else
 	{
@@ -36,6 +36,11 @@ int main (int ac, char **av)
 				level.complain("warning");
 			case 3:
 				level.complain("error");
+		}
+		if (i == 4)
+		{
+			std::cout << "[ Probably complaining about insignificant problems ]";
+			std::cout << std::endl;
 		}
 	}
 }
