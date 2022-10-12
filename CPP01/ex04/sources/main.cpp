@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 15:02:32 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/11 17:58:42 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/12 09:31:26 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,26 +87,33 @@ void ft_find(const char *av[], std::ifstream& fdin, std::ofstream& fdout)
 	} while(getline(fdin, texte));
 }
 
+int ft_loop_protector(std::string av_s2, std::string av_s3)
+{
+if (av_s2.length() != 0 && (av_s2 == av_s3 || av_s3.find(av_s2)!= std::string::npos))
+	{
+		cout << "No Way" << endl;
+		return(1);
+	}
+			return (0);
+}
+
 int main (int ac, const char *av[])
 {
 	std::ofstream fdout;
 	std::ifstream fdin;
-	std::string const av_s2(av[2]);
-	std::string const av_s3(av[3]);
 
 	if (ac == 4)
 	{
+		std::string const av_s2(av[2]);
+		std::string const av_s3(av[3]);
 		fdin.open(av[1],std::ios::in); //ouvre mon fichier initial et copie mon texte ds une string
 		if(!fdin.is_open()) // ifstream::is_open()check louverture du fichier
 			return (error_open());
 		fdin.peek(); //return next character => check si dossier ou file
 		if(fdin.rdstate()) //perror
 			std::cerr << "File empty or directory- file.replace is created anyway" << std::endl;
-		if (av_s2.length() != 0 && av_s2 == av_s3)
-		{
-			cout << "No Way" << endl;
-			return(1);
-		}
+		if(ft_loop_protector(av_s2, av_s3)) 
+			return(1);	
 		create_file(av[1], fdout);
 		if(!fdout.is_open()) // ifstream::is_open()check louverture du fichier
 			return (error_open());

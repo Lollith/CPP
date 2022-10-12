@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:01:03 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/12 13:55:24 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/12 16:22:40 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <sstream>
 # include <cstdlib>
 # include <iostream>
+# include <limits>
+# include <math.h>  
 
 class Convert{
 	public:
@@ -27,20 +29,23 @@ class Convert{
 
 	//surcharge
 		Convert( std::string const scalaire);
+		
 
 	//cast operator
 		operator double( void );
 		operator char( void );
 		operator float( void );
 		operator int( void );
+		
+	//autres
+	double to_convert();
 
 	private:
 		std::string const _scalaire;
 		double _d;
-		const char *_c;
+		char _c;
 		float _f;
 		int _i;
-
 };
 
 

@@ -6,13 +6,15 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 09:55:46 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/11 14:28:52 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/12 15:13:54 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 #include <iostream>
 #include <iomanip>
+#include <limits.h>
+#include <math.h>  
 
 int main (int ac, char **av)
 {
@@ -43,6 +45,8 @@ int main (int ac, char **av)
 	double d = scal;
 	char c = scal;
 	float f = scal;
+	int i = scal;
+	
 	//check le bon type repasse en string et compare mon resultat avec la string de depart
 	std::stringstream ssd;
 	std::stringstream ssc;
@@ -59,21 +63,41 @@ int main (int ac, char **av)
 	ssf << std::fixed << std::setprecision(pos_reel - 1) << f << "f";
 	std::string strf = ssf.str();
 
-	  //std::cout << strf << std::endl;
+	//   std::cout << INT_MIN << std::endl;
 	 //std::cout << av[1] << std::endl;
 
+	if (isnan(d))
+	{	
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: " << static_cast<float>(f) << "f" <<std::endl;
+		std::cout << "double: "<< static_cast<double>(d) << std::endl;
+		return 0;
+	}
+	if (isinf(d))
+	{
+		std::cout << ""
+	}
 
 	if (strf == av[1])
 	{
 		std::cout << "char: '" << static_cast<char>('*') << "'"<<std::endl;
-		std::cout << "int: " << static_cast<int>(f) << std::endl;
+	 	int f_i = static_cast<int>(i);
+	 	if (f_i > INT_MAX)
+			std::cout << "int: overflow" << std::endl;
+		else	
+			std::cout << "int: " << f_i << std::endl;
 		std::cout << "float: " << std::fixed << std::setprecision(pos_reel - 1) << static_cast<float>(f) << "f" << std::endl;
 		std::cout << "double: "<< f << std::endl;
 	}
 	else if (strd == av[1])
 	{	
 		std::cout << "char: No displayable" << std::endl;
-		std::cout << "int: " << static_cast<int>(d) << std::endl;
+	 	int d_i = static_cast<int>(i);
+	 	if (d_i >= INT_MAX || d_i <= INT_MIN)
+			std::cout << "int: overflow" << std::endl;
+		else	
+			std::cout << "int: " << d_i << std::endl;
 		if (pos_reel == 0)
 			std::cout << std::fixed << std::setprecision(pos_reel + 1);
 		else
@@ -89,8 +113,11 @@ int main (int ac, char **av)
 		std::cout << "double: "<< static_cast<double>(c) << std::endl;
 	}
 	else
-		std::cout << "not scalar or overflow" << std::endl;
+		std::cout << "Not a scalar or overflow" << std::endl;
 	
 	
 	return (0);
 }
+
+// float => decallage car manque de "precision" => conversion normale
+//quantite de bytes reservee plus importante pour le double => impossible davoir lameme quantite pour un float => manque de precision 

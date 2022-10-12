@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 21:28:53 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/11 16:48:09 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/12 11:01:51 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int main()
 	{
 		// weapon initialised  NULL
 		HumanB joe("Joe");
+		joe.attack(); // initiliasation a null et utilisationde setweapon surchargee avec ref
+		joe.setWeapon(NULL); // utilisation de setweapon surchager qvec un pointeur obligatoirement pour =>null
 		joe.attack();
 	}
 	

@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 09:34:45 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/11 16:51:32 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/12 10:59:53 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,10 @@ void HumanB::attack(){
 
 void HumanB::setWeapon( Weapon &club1 ){
 	this->m_weapon = &club1;
+	return;
+}
+
+void HumanB::setWeapon( Weapon *club1 ){
+	this->m_weapon = club1;
 	return;
 }

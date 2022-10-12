@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 13:39:09 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/12 14:15:16 by lollith          ###   ########.fr       */
+/*   Updated: 2022/10/12 10:57:56 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class HumanB
 	
 	void attack();
 	void setWeapon( Weapon &club1 );
+	void setWeapon( Weapon *club1 ); // surchage pour mettre a NULL
 };
 
 #endif
