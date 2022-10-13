@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:01:03 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/12 16:22:40 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/13 12:52:01 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,13 @@ class Convert{
 		operator char( void );
 		operator float( void );
 		operator int( void );
+	
+	//accessor
+	size_t getPrecision( void ) const;
 		
 	//autres
-	double to_convert();
+	void to_convert();
+	void define_precision();
 
 	private:
 		std::string const _scalaire;
@@ -46,6 +50,7 @@ class Convert{
 		char _c;
 		float _f;
 		int _i;
+		size_t precision;
 };
 
 

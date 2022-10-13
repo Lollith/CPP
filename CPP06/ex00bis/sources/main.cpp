@@ -3,25 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 14:57:56 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/12 17:22:35 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/13 12:51:47 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
+#include <iomanip>
 
 int main (int ac, char **av)
 {
-	Convert scal(av[1]);
-	(void) av;
 	if (ac != 2)
 	{
 		std::cout << "1 parameter!" << std::endl; 
 		return (1);
 	}
 
+	try{
+		Convert mytest(av[1]);
+	}
+	catch( std::string &che){
+		std::cout << "Error: " << che << std::endl;
+		return (1);
+	}
+
+	Convert scal(av[1]);
+	scal.define_precision();
 	try{
 		char c = scal;
 		std::cout << "char: " << c << std::endl;
@@ -37,5 +46,13 @@ int main (int ac, char **av)
 	catch (std::string &ei){
 		std::cout << "int: " << ei << std::endl;
 	}
+
+	std::cout << std::fixed << std::setprecision(scal.getPrecision());
+	
+	float f = scal;
+	std::cout << "float: " << f << "f" << std::endl;
+	
+	double d = scal;
+	std::cout << "double: " << d << std::endl;
 	return(0);
 }

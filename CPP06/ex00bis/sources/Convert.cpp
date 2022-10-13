@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:01:27 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/12 18:34:41 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/13 12:51:59 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
+# include <limits>
+# include <math.h>  
 
 Convert::Convert(){
 	return;
@@ -30,54 +32,78 @@ Convert &Convert::operator=( Convert const &rhs){
 	return(*this);
 }
 
-Convert::Convert( std::string const scalaire ):_scalaire(scalaire), _d(0), _f(0), _i(0){
+Convert::Convert( std::string const scalaire ):_scalaire(scalaire), _d(0), _f(0), _i(0), precision(1){
+	char *end = NULL;
+	strtod(this->_scalaire.c_str(), &end);
+	std::string s_end(end);
+	if (s_end.length() > 1)
+		throw std::string ("Scalar only");
+
 	return;
 }
 
-
+size_t Convert::getPrecision( void ) const{
+	return (this->precision);
+}
 
  Convert::operator double(){
-	this->_d = strtod(this->_scalaire.c_str(), NULL);
+	to_convert();	
 	return (this->_d);
 }
 
-
  Convert::operator char(){
+	char *end;
 	this->_c = static_cast<char>(*(this->_scalaire.c_str()));
-	Convert::to_convert();
-	if(static_cast<double>(this->_d) == std::numeric_limits<double>::infinity() ||
-	 _d == -std::numeric_limits<double>::infinity() || std::isnan(_d))
+	this->_d = strtod(this->_scalaire.c_str(), &end);
+	if (*end == 'f')
+		throw std::string("*");
+	if(static_cast<double>(this->_d) >= std::numeric_limits<double>::infinity() ||
+	 _d <= -std::numeric_limits<double>::infinity() || std::isnan(_d))
 		throw std::string("impossible");
-	if (!isprint(this->_c) || isdigit(this->_c) )
+	if (!isprint(this->_c) || isdigit(this->_c) || this->_c == '+' || this->_c == '-') 
 		throw std::string("Non displayable");
 	return(this->_c); 
  }
 
 Convert::operator int(){
-	char *end = NULL;
-	this->_d = strtod(this->_scalaire.c_str(), &end);
-	std::string s(end);
-	if (s.length())
-		this->_i = static_cast<int>(*end);
-	else	
-		this->_i = static_cast<int>(this->_d);
+	to_convert();	
 	
-	if(this->_i == std::numeric_limits<int>::infinity() ||
-	_i == -std::numeric_limits<int>::infinity() || std::isnan(_i))
+	if(this->_d >= std::numeric_limits<int>::max() ||
+	_d <= -std::numeric_limits<int>::max() || std::isnan(_d))
 		throw std::string("impossible");	 
 	return (this->_i);
 }
 
 Convert::operator float(){
-	char *end;
-	this->_d = static_cast<float>(strtod(this->_scalaire.c_str(), &end));
-	if (*end == 'f')
-		return (this->_f);
-	return (0);
+	to_convert();	
+	return (this->_f);
 }
 
+void Convert::to_convert(){
+	char *end = NULL;
+	this->_d = strtod(this->_scalaire.c_str(), &end);
+	if (this->_d == 0 && *end)
+	{
+		this->_i = static_cast<int>(*end);
+		this->_f = static_cast<int>(*end);
+		this->_d = static_cast<int>(*end);
+	}
+	else
+	{	
+		this->_i = static_cast<int>(this->_d);
+		this->_f = static_cast<float>(this->_d);
+		this->_d = static_cast<double>(this->_d);
+	}
+}
 
-double Convert::to_convert(){
-	this->_d = strtod(this->_scalaire.c_str(), NULL);
-	return (this->_d);
+void Convert::define_precision()
+{
+	size_t position_ = _scalaire.find(".");
+	
+	if (position_ != std::string::npos)
+		this->precision = _scalaire.length() - position_ - 1;
+	char *end = NULL;
+	this->_d = strtod(this->_scalaire.c_str(), &end);
+	if (this->_d != 0 && (*end))
+		this->precision --;
 }
