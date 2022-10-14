@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 15:10:32 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/14 09:42:18 by agouet           ###   ########.fr       */
+/*   Created: 2022/10/14 09:59:27 by agouet            #+#    #+#             */
+/*   Updated: 2022/10/14 11:45:51 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef DATA_HPP
-# define DATA_HPP
-#include <string>
+#ifndef A_HPP
+# define A_HPP
 
-typedef struct s_Data{
-	int i;
-	char a;
-	std::string s;
-}              Data;
+# include "Base.hpp"
+
+class A : public Base{
+	
+	public:
+	A( void );
+	virtual ~A( void );
+
+	private:
+
+};
 
 #endif

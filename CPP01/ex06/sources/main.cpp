@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 17:21:30 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/11 09:32:00 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/14 15:18:08 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,10 @@ int main (int ac, char **av)
 				level.complain("warning");
 			case 3:
 				level.complain("error");
-		}
-		if (i == 4)
-		{
-			std::cout << "[ Probably complaining about insignificant problems ]";
-			std::cout << std::endl;
+	
+			default:
+				std::cout << "[ Probably complaining about insignificant problems ]";
+				std::cout << std::endl;
 		}
 	}
 }

@@ -6,17 +6,20 @@
 #    By: agouet <agouet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 16:40:46 by agouet            #+#    #+#              #
-#    Updated: 2022/10/14 09:48:15 by agouet           ###   ########.fr        #
+#    Updated: 2022/10/14 16:15:45 by agouet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	serialisation
+NAME	=	type_identificator
 
 CC		=	c++
 
 SRC_PATHS = ./sources/
 
 SRC		=	$(addprefix ./sources/,\
+				A.cpp\
+				B.cpp\
+				C.cpp\
 				main.cpp)
 
 OBJ		=	$(SRC:./sources/%.cpp=./build/%.o)
@@ -32,8 +35,8 @@ build/%.o:	./sources/%.cpp
 			$(CC) $(CFLAGS) -c $< -o $@ $(INC)
 
 $(NAME): $(OBJ)
-		@echo "\033[33;35m fsanitize=address \033[0m"
-		@echo "\033[33;35m Wconversion \033[0m"
+		@echo "\033[33;35m -fsanitize=address \033[0m"
+		@echo "\033[33;35m -Wconversion \033[0m"
 		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
