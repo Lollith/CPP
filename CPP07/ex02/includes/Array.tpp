@@ -3,43 +3,59 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 15:16:25 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/17 18:28:38 by agouet           ###   ########.fr       */
+/*   Created: 2022/10/18 08:44:19 by lollith           #+#    #+#             */
+/*   Updated: 2022/10/18 12:51:13 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_TPP
 # define ARRAY_TPP
-# include <iostream>
+#include <iostream>
 # include <string>
 
-template <typename T>
+template<typename T>
 class Array{
 	public:
 //-----------------------------canonic-----------------------------------------
-	Array<T>( void ): _n(0) { 
-		//T *tab = new T [ 0 ] ;
+	Array<T>( void ):
+		 _n(0), _elements(NULL) { 
 		std::cout << "An empty Array is created." << std::endl; 
 	}
 
 	Array<T>(Array<T> const &copy){ 
+		std::cout << "Copy constructor called" << std::endl;
 		*this = copy; 
 	}
 
 	Array<T> &operator=(Array<T> const &rhs){
-		if(this != rhs)
-			this->_n = rhs.get_n();
+		std::cout << "Assignation overload called" << std::endl;
+		if(this == &rhs)
+			return *this;
+		this->_n = rhs.get_n();
+		this->_elements = new T[this->_n];  // besoin de recreer pour mettre le bon nombre de i du lhs
+		for (unsigned int i = 0; i < this->_n ; i++)	
+			this->_elements[i] = rhs._elements[i];
 		return (*this);
 	}
 	~Array<T>( void ){
+		delete[] this->_elements;
 	}
 	
 //-----------------------------surcharge----------------------------------------
-	Array<T>(unsigned int n): _n(n){ 
-		T *tab = new T [ n ] ;
-		std::cout << "An Array is created, size: "<< tab[0] << std::endl; 
+	Array<T>(unsigned int n): 
+		_n(n), _elements(NULL){ 
+		if(n != 0)
+			this->_elements = new T [ this->_n ] ;
+		std::cout << "An Array is created, size: "<< this->_n << std::endl; 
+	}
+//-------------------------------operator---------------------------------------
+	T &operator[]( unsigned int index)
+	{
+		if(index >= this->_n)
+			throw std::out_of_range("Out of bound" );
+		return this->_elements[index];
 	}
 
 //--------------------------------accessor--------------------------------------
@@ -47,21 +63,31 @@ class Array{
 		return (this->_n);
 	}
 
+	T *get_elements( void )const{
+		return (this->_elements);
+	}
+	
 	void set_n(unsigned int value){
 		this->_n = value;
 		return; 
 	}
 
 //-----------------------------membre-------------------------------------------
-	int size( void );
+	unsigned int size( void ) const{
+		return (this->_n);
+	}
 
 	private:
 		 unsigned int _n;
+		 T *_elements;
 };
 
 template< typename T>
-std::ostream &operator<<(std::ostream &o, Array<T> const & rhs){
-	o << rhs.get_n();
+std::ostream &operator<<(std::ostream &o, Array<T> const &rhs){
+	if (rhs.get_elements() ==  NULL)
+		o << "size: " <<rhs.get_n()<< ", array[0] = NULL";
+	else
+		o << "size: " <<rhs.get_n();
 	return o;
 }
 
