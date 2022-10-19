@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:29:57 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/18 18:23:51 by lollith          ###   ########.fr       */
+/*   Updated: 2022/10/19 15:40:11 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int main ()
 	for_each(it_vect, vect.end(), display);
 	}
 	catch (std::string const &msg){
-		std::cerr << "Exception: "<<msg << std::endl;
+		std::cerr << "Exception: "<< msg << std::endl;
 	}
 
 	std::cout << std::endl;
@@ -62,7 +62,7 @@ int main ()
 	for_each(it_list, lst.end(), display);
 	}
 	catch (std::string const &msg){
-		std::cerr << "Exception: "<<msg << std::endl;
+		std::cerr << "Exception: "<< msg << std::endl;
 	}
 
 	return 0;	
