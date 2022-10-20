@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 09:59:07 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/19 18:30:57 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/20 10:54:26 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Span &Span::operator=( Span const &rhs){
 }
 
 Span::Span( unsigned int N ):
-	 _N(N) {}
+	 _N(N), _is_fill(0){}
 
 std::vector<int> Span::getstorage(void) const{
 	return( this->_storage );
@@ -68,11 +68,19 @@ int Span::shortestSpan(){
 }
 
 
-Span &Span::my_fill_n(int max){
-	(void)max;
-	std::fill_n(this->_storage.begin()+1,   2, 4);
-	// std::fill_n(this->_storage.begin() + 1, 1, 5);
-	*this = NULL;
+Span &Span::my_fill_n(unsigned int from, unsigned int until, int value ){
+	if ( until > _N || from > _N)
+		throw std::string("Too big, Span(max); ");
+	if ( from > until)
+		throw std::string( "error : from > until");
+	if (_is_fill == 0)
+	{
+		for (unsigned int i = from; i <_N; i++)
+			this->addNumber(0); // avec fill besoin dinitialiser avant sinon segfault
+	}
+	std::vector<int>::iterator it = this->_storage.begin() + from;
+	std::fill_n(it, until, value);
+	_is_fill = 1;
 	return (*this);
 }
 
