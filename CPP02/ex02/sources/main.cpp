@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 21:27:16 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/21 09:41:47 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/21 09:58:05 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,11 @@ int main( void ) {
 		std::cout << "the lower is " << a << std::endl;
 	else
 		std::cout << "the lower is " << b << std::endl;
+	
+	std::cout <<"--a: "<< --a << std::endl;// = 2^-8
+	
 
+	std::cout <<" a - b: "<< a - b<< std::endl;// = 2^-8
 
 	return 0;
 }

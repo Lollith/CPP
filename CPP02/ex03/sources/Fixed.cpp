@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 13:35:52 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/21 10:00:14 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/21 11:33:57 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int Fixed::toInt( void ) const{
 /*----------------------------------------------------------------------------*/
 /*					Operator redir flux										  */
 /*----------------------------------------------------------------------------*/
-std::ostream& operator<< (std::ostream& o, Fixed const &instance){
+std::ostream& operator<<(std::ostream& o, Fixed const &instance){
 	o << instance.toFloat();
 	return (o);
 }

@@ -6,12 +6,14 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 13:17:02 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/21 10:01:03 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/21 11:33:49 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
+
+#include <iostream>
 
 class Fixed {
 
