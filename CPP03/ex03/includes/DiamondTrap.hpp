@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 13:27:17 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/24 12:00:21 by agouet           ###   ########.fr       */
+/*   Created: 2022/10/24 12:24:00 by agouet            #+#    #+#             */
+/*   Updated: 2022/10/24 16:31:50 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-#include "ClapTrap.hpp"
+# include<string>
+# include<iostream> 
+# include "FragTrap.hpp"
+# include "ScavTrap.hpp"
+# include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap{
 
+class DiamondTrap: public FragTrap, public ScavTrap{
 	public:
+		virtual ~DiamondTrap();
+		DiamondTrap(DiamondTrap const &copy);
+		DiamondTrap &operator=(DiamondTrap const &rhs);
 		
-		FragTrap( void );
-		FragTrap( FragTrap const &copy );
-		FragTrap &operator=( FragTrap const &rhs );
-		~FragTrap( void );
 
-
-		FragTrap(std::string name);
+		DiamondTrap(std::string name);
 		void attack(const std::string &target);
-		void beRepaired(unsigned int amount);
-		void highFivesGuys(void);
-	
+		void whoAmI();
+
 	private:
-
-
+		DiamondTrap(); // non utilise
+		std::string m_name;
 };
 
 #endif

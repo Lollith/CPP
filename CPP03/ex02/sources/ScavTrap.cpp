@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 17:00:14 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/22 14:30:11 by lollith          ###   ########.fr       */
+/*   Updated: 2022/10/24 11:40:23 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,11 @@ ScavTrap::ScavTrap( ScavTrap const &copy ) : ClapTrap(copy){ // base class doit 
 }
 
 
-ScavTrap::ScavTrap(std::string name): ClapTrap(name){
+ScavTrap::ScavTrap(std::string name): 
+	ClapTrap(name){
+	m_hit_points = 100; 
+	m_attack_damage = 50;
+	m_attack_damage = 20;
 	std::cout << "Scavtrap- Constructor called" << std::endl;
 	return;
 }

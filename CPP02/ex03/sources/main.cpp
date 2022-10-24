@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 21:27:16 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/21 18:13:17 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/24 15:46:40 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main( void ) {
 	if (bsp(a, b, c, p0))
 		std::cout << "Point p0 a l'interieur du triangle" << std::endl;
 	else
-		std::cout << "Point d a l'exterieur du triangle" << std::endl;
+		std::cout << "Point p0 a l'exterieur du triangle" << std::endl;
 	
 
 	Point	a1 = Point(0, 0); // constructeur de copy qui est invoque
@@ -44,12 +44,12 @@ int main( void ) {
 	if (bsp(a1, b1, c1, p1))
 		std::cout << "Point p1 a l'interieur du triangle" << std::endl;
 	else
-		std::cout << "Point p a l'exterieur du triangle" << std::endl;
+		std::cout << "Point p1 a l'exterieur du triangle" << std::endl;
 	
 	
 	Point p2 = Point(-0.1, 0.5);
 	if (bsp(a1, b1, c1, p2))
 		std::cout << "Point p2 a l'interieur du triangle" << std::endl;
 	else
-		std::cout << "Point p a l'exterieur du triangle" << std::endl;
+		std::cout << "Point p2 a l'exterieur du triangle" << std::endl;
 }
