@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 13:27:17 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/24 12:00:21 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/31 08:14:50 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class FragTrap : public ClapTrap{
 
 	public:
 		
-		FragTrap( void );
 		FragTrap( FragTrap const &copy );
 		FragTrap &operator=( FragTrap const &rhs );
 		~FragTrap( void );
@@ -32,6 +31,7 @@ class FragTrap : public ClapTrap{
 	
 	private:
 
+		FragTrap( void );
 
 };
 

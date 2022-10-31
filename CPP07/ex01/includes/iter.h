@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:39:20 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/17 14:04:44 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/28 09:24:58 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 template< typename T, typename D >
 void iter(T *tab, int size, D (*f)( T &val)){
 	for (int i = 0; i < size; i++)
+	{
 		(*f)(tab[i]);
-
+	}
 }
 
 template< typename T, typename D  >

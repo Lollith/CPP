@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:39:21 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/17 14:31:32 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/28 09:15:15 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int main(){
 	float tab2[4] = {0.4, 2.1, 7.8, 8.3};
 	::iter <float, void> (tab2, 4, &ft_display);
 	::iter<float, float >(tab2, 4, &ft_initializ);
-	::iter<float, void >(tab2, 4, &ft_display);
+	::iter<float, void >(tab2, 5, &ft_display);
+
+	
 
 }

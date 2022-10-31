@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:54:02 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/21 15:04:57 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/31 08:14:36 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class ClapTrap{
 
 	public:
 
-		ClapTrap(void);
 		ClapTrap(ClapTrap const &copy);
 		ClapTrap &operator=( ClapTrap const &rhs);
 		~ClapTrap(void);
@@ -32,6 +31,7 @@ class ClapTrap{
 
 	protected:
 
+		ClapTrap(void);
 		std::string		m_name;
 		unsigned int 	m_hit_points;
 		unsigned int	m_energy_points;

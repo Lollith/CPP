@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 15:32:27 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/31 08:37:10 by agouet           ###   ########.fr       */
+/*   Created: 2022/10/31 16:34:22 by agouet            #+#    #+#             */
+/*   Updated: 2022/10/31 17:43:40 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
+# include "IMateriaSource.hpp"
 
-# include <string>
-# include <iostream>
-
-class WrongAnimal{
-
+class MateriaSource: public IMateriaSource{
 	public:
-
-		WrongAnimal( void );
-		virtual ~WrongAnimal( void );
-		WrongAnimal ( WrongAnimal const &copy );
-		WrongAnimal &operator=( WrongAnimal const &rhs );
-
-		void makeSound()const; // pas de virtual
-		std::string getType( void ) const;
-
-	protected:
-
-		std::string m_type;
+		MateriaSource();
+		~MateriaSource();
+		// canonic
 
 
+		virtual void learnMateria(AMateria *);
+		virtual AMateria* createMateria(std::string const &type);
+
+	private:
+		AMateria *_materia[4];	
 };
 
 #endif
