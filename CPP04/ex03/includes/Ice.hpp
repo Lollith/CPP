@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 14:47:31 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/31 18:13:32 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/01 11:12:28 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ class Ice: public AMateria
 		~Ice();
 		Ice(Ice const &copy);
 		Ice &operator=(Ice const &rhs);
-
-		Ice(std::string const &type);
 
 		virtual AMateria* clone() const;
 		virtual void use(ICharacter &target);

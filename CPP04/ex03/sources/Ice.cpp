@@ -6,13 +6,15 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 14:47:29 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/31 18:11:52 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/01 12:02:13 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
 Ice::Ice(): AMateria(){
+	_type = "ice";
+	std::cout << "Ice block" << std::endl;
 	return;
 }
 
@@ -31,12 +33,6 @@ Ice::Ice(Ice const &copy){
  }
 
 //----------------------------------------------------------------------------------
-
-Ice::Ice(std::string const &type): AMateria(type){
-	_type = "ice";
-	std::cout << _type <<std::endl;
-	return;
-}
 
 AMateria* Ice::clone() const{
 	return(new Ice());

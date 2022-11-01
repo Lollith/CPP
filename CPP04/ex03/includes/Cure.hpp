@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 18:12:52 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/31 18:14:16 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/01 11:12:22 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ class Cure: public AMateria
 		~Cure();
 		Cure(Cure const &copy);
 		Cure &operator=(Cure const &rhs);
-
-		Cure(std::string const &type);
 
 		virtual AMateria* clone() const;
 		virtual void use(ICharacter &target);

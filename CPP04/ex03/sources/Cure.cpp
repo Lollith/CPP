@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 18:14:36 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/31 18:18:38 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/01 11:13:20 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 
 Cure::Cure(): AMateria(){
+	_type = "cure";
+	std::cout << "Cure block" << std::endl;
 	return;
 }
 
@@ -32,12 +34,6 @@ Cure::Cure(Cure const &copy){
  }
 
 //----------------------------------------------------------------------------------
-
-Cure::Cure(std::string const &type): AMateria(type){
-	_type = "cure";
-	std::cout << _type <<std::endl;
-	return;
-}
 
 AMateria* Cure::clone() const{
 	return(new Cure());
