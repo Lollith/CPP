@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 16:34:22 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/31 17:43:40 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/01 09:04:34 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ class MateriaSource: public IMateriaSource{
 	public:
 		MateriaSource();
 		~MateriaSource();
-		// canonic
+		MateriaSource(MateriaSource const &copy);
+		MateriaSource &operator=(MateriaSource const &rhs);
 
 
 		virtual void learnMateria(AMateria *);

@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 16:10:58 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/31 14:47:33 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/01 09:02:27 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ class Character: public ICharacter{
 
 	public:
 	~Character();
-	Character(std::string name);
-//copy
-//assignement
+	Character(Character const &copy);
+	Character &operator=(Character const &rhs);
 
 	void set_waste(AMateria *waste);
+	Character(std::string name);
 
 	virtual std::string const & getName() const;
 	virtual void equip(AMateria* m);
