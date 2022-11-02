@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 13:35:52 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/15 18:34:49 by lollith          ###   ########.fr       */
+/*   Updated: 2022/10/21 09:24:01 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Fixed.hpp"
 #include <cmath>
 
@@ -26,7 +25,7 @@ Fixed::Fixed( int const fixed ){
 
 Fixed::Fixed( float const fixed){
 	std::cout << "Float constructor called" << std::endl;
-	this->m_fixed = roundf (fixed * (1 <<fractional_bits));
+	this->m_fixed = roundf (fixed * (1 << fractional_bits)); //arrondi
 }
 
 Fixed::Fixed(const Fixed &nbFixedAcopier){

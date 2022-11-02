@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 14:11:38 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/27 16:50:02 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/01 14:27:59 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 //----------------------forme canomic------------------------------------------
 AMateria::AMateria (){
+	// std::cout << "AMateria create" << std::endl; 
 	return;
 }
 
@@ -23,25 +24,28 @@ AMateria::~AMateria(){
 
 AMateria::AMateria(AMateria const &copy)
 {
+	std::cout << "AMateria cp" << std::endl; 
 	*this = copy;
 }
 
-//AMateria &AMateria::operator=(AMateria const &rhs)
-// // {
-// 	if (this != &rhs)
-// 	{
-// 		this->m_type = rhs.m_type;
-// 	}
-// 	return (*this);
-// }
+AMateria &AMateria::operator=(AMateria const &rhs)
+{
+	std::cout << "AMateria assign" << std::endl; 
+	if (this != &rhs)
+		this->_type = rhs.getType();
+	return (*this);
+}
 
-//--------------------------------------membres----------------------------------
-AMateria::AMateria(std::string const &type): m_type(type){
+//--------------------------------------surcharges et accessor----------------------------------
+AMateria::AMateria(std::string const &type): _type(type){
 	return;
 }
 
-//std::string const &AMateria::getType const{
-//	return(this->m_type);
+std::string const &AMateria::getType() const{
+	return(this->_type);
+}
 
-//}
-
+//--------------------------------------membres----------------------------------
+void AMateria::use(ICharacter& target){
+	(void)target;	
+}

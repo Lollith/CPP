@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:54:54 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/20 16:12:39 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/24 11:04:23 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,23 @@
 int main(){
 
 	ClapTrap bot ("bot1");
-	//indiana= indiana;
 	bot.attack("bear");
 	bot.takeDamage(2);
 	bot.takeDamage(2);
 	bot.beRepaired(3);
+	bot.attack("bear");
+	bot.attack("bear");
+	bot.attack("bear");
+	bot.attack("bear");
+	bot.attack("bear");
+	bot.attack("bear");
+	bot.attack("bear");
+	bot.attack("bear");
+	bot.attack("bear");
+	bot.takeDamage(2);
+	bot.takeDamage(2);
+	bot.takeDamage(2);
+	bot.takeDamage(2);
+	bot.takeDamage(2);
 
 }

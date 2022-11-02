@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:32:27 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/23 15:40:22 by lollith          ###   ########.fr       */
+/*   Updated: 2022/10/31 08:37:10 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class WrongAnimal{
 		WrongAnimal ( WrongAnimal const &copy );
 		WrongAnimal &operator=( WrongAnimal const &rhs );
 
-		void makeSound()const;
+		void makeSound()const; // pas de virtual
 		std::string getType( void ) const;
 
 	protected:

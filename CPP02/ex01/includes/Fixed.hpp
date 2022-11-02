@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 13:17:02 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/15 18:24:59 by lollith          ###   ########.fr       */
+/*   Updated: 2022/10/21 09:20:17 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
+
+#include <iostream>
 
 class Fixed {
 
@@ -32,6 +34,7 @@ class Fixed {
 	private:
 	
 		int m_fixed;
+		
 		static const int fractional_bits; // non membre=> static
 
 };

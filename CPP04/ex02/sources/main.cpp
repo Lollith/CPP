@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 13:20:21 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/26 13:21:35 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/31 10:08:40 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main()
 {
-//const AAnimal* meta = new Animal(); // non instanciable
+// const AAnimal* meta = new AAnimal(); // non instanciable
 const AAnimal* j = new Dog();
 const AAnimal* i = new Cat();
 std::cout << j->getType() << " " << std::endl;

@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 21:27:16 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/19 15:34:37 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/21 09:58:05 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 int main( void ) {
 	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );//Fixed(2) creer une instance temporaire pas besoin de la nomer a vec int = 2; 5.05 est un double => on le caste en float
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );//Fixed(2) creer une instance temporaire pas besoin de la nommer a vec int = 2; 5.05 est un double => on le cast en float
+	
 	std::cout << a << std::endl;
-	std::cout <<"++a: "<< ++a << std::endl;
+	std::cout <<"++a: "<< ++a << std::endl;// = 2^-8
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
@@ -35,7 +36,11 @@ int main( void ) {
 		std::cout << "the lower is " << a << std::endl;
 	else
 		std::cout << "the lower is " << b << std::endl;
+	
+	std::cout <<"--a: "<< --a << std::endl;// = 2^-8
+	
 
+	std::cout <<" a - b: "<< a - b<< std::endl;// = 2^-8
 
 	return 0;
 }

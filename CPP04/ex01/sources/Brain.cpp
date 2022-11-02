@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:46:08 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/23 17:39:46 by lollith          ###   ########.fr       */
+/*   Updated: 2022/10/31 09:27:22 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ Brain &Brain::operator=( Brain const & rhs )
 	if (this != &rhs)
 	{
 		cout << "copy assignement operator is called" << endl;
-		//this->m_type = rhs.m_type;
 	}
 		return *this;
 }

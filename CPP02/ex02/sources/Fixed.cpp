@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 13:35:52 by lollith           #+#    #+#             */
-/*   Updated: 2022/09/20 10:25:48 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/21 10:00:14 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void Fixed::setRawBits ( int const raw ){
 /*                    Methodes ex1                                            */
 /*----------------------------------------------------------------------------*/
 float Fixed::toFloat( void ) const{
-	return((float) this->m_fixed /(float) ( 1 << Fixed::fractional_bits ));
+	return((float) this->m_fixed / (float) ( 1 << Fixed::fractional_bits ));
 }
 
 int Fixed::toInt( void ) const{
@@ -153,7 +153,7 @@ Fixed &Fixed::operator--() {
 }
 
 Fixed Fixed::operator--(int) {
-	return(Fixed ( ++*this ));
+	return(Fixed ( --*this ));
 }
 /*----------------------------------------------------------------------------*/
 /*        AD-HOC polymorphism && static										  */

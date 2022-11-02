@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:54:02 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/20 15:57:52 by agouet           ###   ########.fr       */
+/*   Updated: 2022/10/24 10:04:40 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ClapTrap{
 		~ClapTrap(void);
 
 		ClapTrap( std::string name );
+
 		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);

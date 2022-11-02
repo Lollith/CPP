@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 16:52:54 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/22 14:30:13 by lollith          ###   ########.fr       */
+/*   Updated: 2022/10/31 08:15:49 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class ScavTrap : public ClapTrap{
 
 	public:
 
-		ScavTrap( void );
 		ScavTrap( ScavTrap const &copy );
 		ScavTrap &operator=( ScavTrap const &rhs );
 		~ScavTrap( void );
@@ -28,6 +27,9 @@ class ScavTrap : public ClapTrap{
 		ScavTrap(std::string name);
 		void attack(const std::string &target);
 		void guardGate();
+		
+	private:
+		ScavTrap( void ); // importance de mettre en prive si j initialise pas correctement
 
 };
 
