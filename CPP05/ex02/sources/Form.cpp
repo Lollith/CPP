@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 21:24:58 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/06 14:07:51 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/02 10:28:51 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
+#include "color.h"
 
 //-----------------------classes internes---------------------------------------
 const char *Form::GradeTooHightException::what() const throw(){
@@ -81,7 +82,7 @@ void Form::beSigned( Bureaucrat &bureaucrat){
 	 		this->m_beSigned = true;
 	}
 	catch( std::exception const &myE){
- 	std::cerr << "Error exception: " << myE.what() << std::endl;
+ 	std::cerr << RED <<"Error exception: " << myE.what() << RES << std::endl;
  	}
 	bureaucrat.signForm(*this);
 }
@@ -97,7 +98,7 @@ bool Form::execute( Bureaucrat const &executor )const{
         	create(this->m_target);
 		}
 		catch(std::string const& msg){
-			std::cerr << msg << std::endl;
+			std::cerr << RED << msg << RES <<std::endl;
 			return false;
 		}
 	}
@@ -105,7 +106,7 @@ bool Form::execute( Bureaucrat const &executor )const{
 }
 //------------------------------non_member--------------------------------------
 std::ostream &operator<<(std::ostream &out, Form const &rhs){
-	out << "The form  has " ;
+	out << "The " << rhs.getName() <<" has " ;
 	out <<  "Grade for signature: "<< rhs.getGrade_sign()<<" and ";
 	out << "Grade for execution: " << rhs.getGrade_exec();
 	return (out);

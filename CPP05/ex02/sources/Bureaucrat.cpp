@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:23:54 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/06 14:09:01 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/02 10:30:50 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "color.h"
 //----------------------------------exception----------------------------------
 const char *Bureaucrat::GradeTooHighException::what() const throw(){
 	return("Grade too hight");
@@ -48,7 +49,7 @@ void Bureaucrat::executeForm( Form const &form ){
 			std::cout << "\"" << this->m_name << "\" executed " << form.getName() << std::endl;
 	}
 	catch( std::exception const &myE){
-		std::cout << this->m_name << " couldn't execut \"" << form.getName() << "\"";
+		std::cout << RED << this->m_name << " couldn't execut \"" << RES <<form.getName() << "\"";
 		if (form.getBeSigned())
 		{
 			std::cout <<" because: \""<< form.getName() << "\" is signed but ";

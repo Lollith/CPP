@@ -6,7 +6,7 @@
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 09:49:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/09/30 10:57:12 by lollith          ###   ########.fr       */
+/*   Updated: 2022/11/02 09:03:28 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main(){
 	catch(std::exception const &myexeption){
 		std::cerr <<  "Error: " << myexeption.what() << std::endl;
 	}
+	std::cout << std::endl;
 
 	try{
 
@@ -36,6 +37,8 @@ int main(){
 		std::cerr <<  "Error: " << myexeption.what() << std::endl;
 	}
 
+	std::cout << std::endl;
+	
 	try
 	{
 		Bureaucrat bill("Bill", 200);

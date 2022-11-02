@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:06:19 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/06 14:32:43 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/02 09:34:41 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ RobotomyRequestForm::~RobotomyRequestForm(){
     return;
 }
 
-RobotomyRequestForm::RobotomyRequestForm( RobotomyRequestForm const &copy){
+RobotomyRequestForm::RobotomyRequestForm( RobotomyRequestForm const &copy): Form(copy){
     *this = copy;
 }
 

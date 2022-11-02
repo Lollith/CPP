@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:54:02 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/06 13:42:07 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/02 09:33:05 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class RobotomyRequestForm: public Form{
         //classes internes
         
         //canonic
-        RobotomyRequestForm();
         virtual ~RobotomyRequestForm();
         RobotomyRequestForm( RobotomyRequestForm const &copy);
         RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
@@ -34,6 +33,7 @@ class RobotomyRequestForm: public Form{
         virtual void create(std::string target) const;
 
 	private:
+        RobotomyRequestForm();
 		static int m_count; 
 };
 

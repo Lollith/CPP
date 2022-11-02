@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 09:49:16 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/03 16:49:40 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/02 09:15:27 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ int main(){
 	std::cout << bill << std::endl;
 	bill.decrement(20);
 	std::cout << bill << std::endl;
+
+	std::cout << std::endl;
+
 try{
 	Form A("A1", 80, 20);
 	std::cout << A << std::endl;
@@ -27,6 +30,8 @@ try{
 catch(std::exception const &myexception){
 	std::cerr << "Error: " << myexception.what()<<std::endl;
 }
+
+	std::cout << std::endl;
 
 try{
 	Form B("B1", 100, 150);
@@ -36,6 +41,9 @@ try{
 catch(std::exception const &myexception){
 	std::cerr << "Error: " << myexception.what()<<std::endl;
 }
+
+	std::cout << std::endl;
+	
 try{
 	Form C("C1", 1, 150);
 	std::cout << C << std::endl;

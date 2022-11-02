@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:37:31 by agritech          #+#    #+#             */
-/*   Updated: 2022/10/07 11:02:50 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/02 10:41:38 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){
     return;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const &copy){
+ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const &copy): Form(copy){
     *this = copy;
 }
 

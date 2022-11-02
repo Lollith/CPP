@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:18:28 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/06 14:32:01 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/02 09:34:51 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ PresidentialPardonForm::~PresidentialPardonForm(){
     return;
 }
 
-PresidentialPardonForm::PresidentialPardonForm( PresidentialPardonForm const &copy){
+PresidentialPardonForm::PresidentialPardonForm( PresidentialPardonForm const &copy): Form(copy){
     *this = copy;
 }
 

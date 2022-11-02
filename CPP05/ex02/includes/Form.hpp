@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 18:49:59 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/06 11:43:01 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/02 09:33:18 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ class Form{ //devient abstaite
         };
 
 	//canonic
-		Form();
 		virtual ~Form();
 		Form(Form const &copy);
 		Form &operator=(Form const &rhs);
@@ -57,6 +56,7 @@ class Form{ //devient abstaite
 
 
 	protected: //  devient mere
+		Form();
 		std::string const 	m_name;
 		bool 				m_beSigned;
 		int	const			m_grade_sign;

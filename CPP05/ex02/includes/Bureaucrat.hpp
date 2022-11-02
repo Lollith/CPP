@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:24:33 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/05 15:45:37 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/02 09:33:28 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ class Bureaucrat{
 
 
 	//canonic
-		Bureaucrat( void );
 		~Bureaucrat( void );
 		Bureaucrat( Bureaucrat const &copy );
 		Bureaucrat &operator=( Bureaucrat const &rhs );
@@ -49,6 +48,7 @@ class Bureaucrat{
 
 
 	private:
+		Bureaucrat( void );
 		std::string const	m_name;
 		int 				m_grade;
 

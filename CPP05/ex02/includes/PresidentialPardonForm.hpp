@@ -22,7 +22,6 @@ class PresidentialPardonForm: public Form{
         //classes internes
         
         //canonic
-        PresidentialPardonForm();
         virtual ~PresidentialPardonForm();
         PresidentialPardonForm( PresidentialPardonForm const &copy);
         PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
@@ -35,6 +34,7 @@ class PresidentialPardonForm: public Form{
         virtual void create(std::string target) const;
 
 	private:
+        PresidentialPardonForm();
 };
 
 # endif

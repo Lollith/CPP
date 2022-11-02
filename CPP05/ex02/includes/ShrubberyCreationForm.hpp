@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:27:41 by agritech          #+#    #+#             */
-/*   Updated: 2022/10/05 15:42:20 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/02 09:33:51 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class ShrubberyCreationForm: public Form{
         //classes internes
         
         //canonic
-        ShrubberyCreationForm();
         virtual ~ShrubberyCreationForm();
         ShrubberyCreationForm( ShrubberyCreationForm const &copy);
         ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
@@ -33,6 +32,7 @@ class ShrubberyCreationForm: public Form{
         virtual void create(std::string target) const;
 
     private: 
+        ShrubberyCreationForm();
 };
 
 # endif
