@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 18:14:36 by agouet            #+#    #+#             */
-/*   Updated: 2022/11/01 11:13:20 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/03 08:40:30 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Cure::~Cure(){
 	return;
 }
 
-Cure::Cure(Cure const &copy){
+Cure::Cure(Cure const &copy): AMateria(copy){
 	*this = copy;
 }
 

@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 14:47:29 by agouet            #+#    #+#             */
-/*   Updated: 2022/11/01 12:02:13 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/03 08:40:08 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Ice::~Ice(){
 	return;
 }
 
-Ice::Ice(Ice const &copy){
+Ice::Ice(Ice const &copy): AMateria(copy){
 	*this = copy;
 }
 

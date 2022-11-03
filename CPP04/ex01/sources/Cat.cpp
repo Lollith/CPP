@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 12:39:57 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/31 09:32:51 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/03 11:36:40 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ Cat &Cat::operator=( Cat const &rhs )
 	{
 		cout << "copy assignement operator is called" << endl;
 		this->m_type = rhs.m_type;
-		this->m_brain = new Brain(*(rhs.m_brain));
+		this->m_brain = new Brain(*(rhs.m_brain)); // deep copy
 		
 	}
 		return *this;
