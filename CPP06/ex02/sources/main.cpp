@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 10:58:33 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/14 16:18:28 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/07 10:29:25 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ Base *generate(void){
 void identify_pointer(Base* p)
 {
 	char cc;
-	A *a = dynamic_cast<A *>(p);
+	A *a = dynamic_cast<A *>(p); // a lieu a l execution et non compilation
 	B *b = dynamic_cast<B *>(p);
 	C *c = dynamic_cast<C *>(p);
 	if (a != NULL)

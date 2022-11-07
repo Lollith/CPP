@@ -6,7 +6,7 @@
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:01:03 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/13 12:52:01 by lollith          ###   ########.fr       */
+/*   Updated: 2022/11/07 09:53:42 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 class Convert{
 	public:
  	//canonic
-		Convert( void );
 		~Convert( void );
 		Convert ( Convert const &copy );
 		Convert &operator=( Convert const &rhs );
@@ -31,18 +30,18 @@ class Convert{
 		Convert( std::string const scalaire);
 		
 
-	//cast operator
+	//type cast operator
 		operator double( void );
 		operator char( void );
 		operator float( void );
 		operator int( void );
 	
 	//accessor
-	size_t getPrecision( void ) const;
+		size_t getPrecision( void ) const;
 		
 	//autres
-	void to_convert();
-	void define_precision();
+		void to_convert();
+		void define_precision();
 
 	private:
 		std::string const _scalaire;
@@ -51,6 +50,8 @@ class Convert{
 		float _f;
 		int _i;
 		size_t precision;
+		
+		Convert( void );
 };
 
 

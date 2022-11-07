@@ -6,7 +6,7 @@
 /*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 14:57:56 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/13 12:51:47 by lollith          ###   ########.fr       */
+/*   Updated: 2022/11/07 10:00:13 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main (int ac, char **av)
 		return (1);
 	}
 
+	// check mon parametre de main , si scalaire
 	try{
 		Convert mytest(av[1]);
 	}
@@ -47,6 +48,7 @@ int main (int ac, char **av)
 		std::cout << "int: " << ei << std::endl;
 	}
 
+	// definit mon affichage en fct de ma precision
 	std::cout << std::fixed << std::setprecision(scal.getPrecision());
 	
 	float f = scal;

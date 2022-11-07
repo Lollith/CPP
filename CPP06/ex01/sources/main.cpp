@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 14:22:06 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/14 09:42:39 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/07 10:17:04 by lollith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 #include "Data.hpp"
 #include "iostream"
 
+// serialization: codage dune info sous la forme dune suite dinfo plus petites(atomique)⇒ sauvegarde ou transport sur le reseau
+//uintptr_t =is an unsigned integer type that is capable of storing a data pointer
+
 uintptr_t serialize( Data* ptr ){
 	return( reinterpret_cast<uintptr_t>(ptr) );
 }
 
-Data* deserialize( uintptr_t raw )
-{
+Data* deserialize( uintptr_t raw ){
 	return( reinterpret_cast<Data*>(raw) );
 }
 
