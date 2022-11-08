@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:01:27 by agouet            #+#    #+#             */
-/*   Updated: 2022/11/07 10:10:29 by lollith          ###   ########.fr       */
+/*   Updated: 2022/11/08 17:27:00 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,17 @@ size_t Convert::getPrecision( void ) const{
 //utilisation de strtod, converti un  char* vers du double
 
 // initialisation et check la fin de ma chaine
-Convert::Convert( std::string const scalaire ):_scalaire(scalaire), _d(0), _f(0), _i(0), precision(1){
+Convert::Convert( std::string const scalaire ):
+	_scalaire(scalaire), _d(0), _f(0), _i(0), precision(1){
 	char *end = NULL;
-	strtod(this->_scalaire.c_str(), &end);
+	double d = 0;
+	d = strtod(this->_scalaire.c_str(), &end);
 	std::string s_end(end);
-	if (s_end.length() >= 1)
-		if (s_end != "f")
-			throw std::string ("Scalar only");
+
+	if (s_end.length() > 1 )
+		throw std::string ("Scalar only");
+	if (d && s_end.length() == 1 && s_end != "f")
+		throw std::string ("Scalar only");
 	return;
 }
 
