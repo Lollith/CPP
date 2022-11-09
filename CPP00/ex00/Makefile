@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lollith <lollith@student.42.fr>            +#+  +:+       +#+         #
+#    By: agouet <agouet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 16:40:46 by agouet            #+#    #+#              #
-#    Updated: 2022/08/22 21:27:58 by lollith          ###   ########.fr        #
+#    Updated: 2022/11/09 10:45:40 by agouet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,14 @@ SRC		=	megaphone.cpp
 
 OBJ		=	$(SRC:.cpp=.o)
 DEP		=	$(SRCS:.cpp=.d)
-CC		=	c++
-FLAGS	= -MMD -Wall -Wextra -Werror -std=c++98
+CXX		=	c++
+CXXFLAGS	= -MMD -Wall -Wextra -Werror -std=c++98
 
 %.o:	%.cpp
-		$(CC) $(CFLAGS) -c $< -o $@
+		$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-		$(CC) $(CFLAG) $(OBJ) -o $(NAME)
+		$(CXX) $(CXXFLAG) $(OBJ) -o $(NAME)
 
 all	: $(NAME)
 

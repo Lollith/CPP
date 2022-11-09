@@ -6,13 +6,13 @@
 #    By: agouet <agouet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 16:40:46 by agouet            #+#    #+#              #
-#    Updated: 2022/10/17 10:30:59 by agouet           ###   ########.fr        #
+#    Updated: 2022/11/09 10:52:58 by agouet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	convert
 
-CC		=	c++
+CXX		=	c++
 
 SRC_PATHS = ./sources/
 
@@ -21,7 +21,7 @@ SRC		=	$(addprefix ./sources/,\
 
 OBJ		=	$(SRC:./sources/%.cpp=./build/%.o)
 DEP		=	$(SRC:./sources/%.cpp=./build/%.d)
-CFLAGS	= 	-MMD -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CXXFLAGS	= 	-MMD -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 INC		=	-I ./includes/
 
 
@@ -29,11 +29,11 @@ all	: $(NAME)
 
 build/%.o:	./sources/%.cpp
 			mkdir -p build
-			$(CC) $(CFLAGS) -c $< -o $@ $(INC)
+			$(CXX) $(CXXFLAGS) -c $< -o $@ $(INC)
 
 $(NAME): $(OBJ)
 		@echo "\033[33;35m fsanitize=address \033[0m"
-		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+		$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 		rm -rf build

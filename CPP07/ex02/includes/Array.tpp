@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 08:44:19 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/18 12:51:13 by lollith          ###   ########.fr       */
+/*   Updated: 2022/11/09 13:55:53 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_TPP
 # define ARRAY_TPP
-#include <iostream>
+
+# include <iostream>
 # include <string>
 
-template<typename T>
+template <typename T>
 class Array{
 	public:
 //-----------------------------canonic-----------------------------------------
@@ -39,6 +40,7 @@ class Array{
 			this->_elements[i] = rhs._elements[i];
 		return (*this);
 	}
+	
 	~Array<T>( void ){
 		delete[] this->_elements;
 	}
