@@ -6,10 +6,11 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 08:44:19 by lollith           #+#    #+#             */
-/*   Updated: 2022/11/09 13:55:53 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/11 14:36:45 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// ne pas faire juste de .tpp, faire .hpp + .tpp => plus propre
 #ifndef ARRAY_TPP
 # define ARRAY_TPP
 

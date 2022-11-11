@@ -33,7 +33,12 @@
 		"type_traits": "cpp",
 		"typeinfo": "cpp",
 		"utility": "cpp",
-		"numbers": "cpp"
+		"numbers": "cpp",
+		"deque": "cpp",
+		"list": "cpp",
+		"unordered_map": "cpp",
+		"vector": "cpp",
+		"functional": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "Enabled"
 }

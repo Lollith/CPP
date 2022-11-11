@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 09:59:07 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/20 10:54:26 by lollith          ###   ########.fr       */
+/*   Updated: 2022/11/11 18:29:12 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,27 +44,28 @@ std::ostream &operator<<(std::ostream &o, Span const &rhs){
 	return o;
 }
 
-int Span::longestSpan(){
+long Span::longestSpan(){
 	if (_N <= 1)
 		throw std::string ("Not enougth Number.");
 	sort( _storage.begin(), _storage.end());
-	return (_storage[_N - 1] - _storage[0]);
+	return (static_cast<long>(*(_storage.end() - 1)) - static_cast<long>(*(_storage.begin()))); // protege du fait que si je creer Span(5) et que  jadd pas 5 nomnbre
 }
 
-int Span::shortestSpan(){
+long Span::shortestSpan(){ //ATTENTION A CORRIGER // + valeur absolue
 	if (_N <= 1)
 		throw std::string ("Not enougth Number.");
 	sort( _storage.begin(), _storage.end());
 	
-	int tmp = 10000; // valeur a mettre au mx
-	int diff = 0;
+	long tmp = std::numeric_limits<int>::max();
+	long diff = 0;
 	sort( _storage.begin(), _storage.end());
-	for (unsigned int i = 0; i + 1 < _N; i++ ){
-	diff =_storage [i + 1] - _storage[i]; 
-	if(tmp > diff)
-		tmp = diff;
+		std::cout <<(static_cast<long>(*(_storage.end()-1)))<< std::endl; 
+	for (unsigned int i = 0; i +1   < static_cast<long>(*(_storage.end()-1)); i++ ){
+		diff =_storage [i + 1] - _storage[i];
+		if(tmp > diff)
+			tmp = diff;
 	}
-	return tmp;
+	return (tmp);
 }
 
 

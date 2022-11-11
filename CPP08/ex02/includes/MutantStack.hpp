@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 11:06:39 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/20 19:17:09 by lollith          ###   ########.fr       */
+/*   Updated: 2022/11/11 17:49:44 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,22 @@ template< typename T > class MutantStack : public std::stack<T>
 
 		typedef typename std::stack<T>::container_type::iterator iterator;
 
-		iterator begin(){return std::stack<T>::c.begin();}
-		iterator end(){return std::stack<T>::c.end();}
+		// iterator begin(){return std::stack<T>::c.begin();}
+		// iterator end(){return std::stack<T>::c.end();}
 
+		iterator begin();
+		iterator end();
 	private:
 };
 
 #include "MutantStack.tpp"
 #endif
+
+begin	Return iterator to beginning (public member function)
+end	Return iterator to end (public member function)
+rbegin	Return reverse iterator to reverse beginning (public member function)
+rend	Return reverse iterator to reverse end (public member function)
+cbegin	Return const_iterator to beginning (public member function)
+cend	Return const_iterator to end (public member function)
+crbegin	Return const_reverse_iterator to reverse beginning (public member function)
+crend	Return const_reverse_iterator to reverse end (public member function)

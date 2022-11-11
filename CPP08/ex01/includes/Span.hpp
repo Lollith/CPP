@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 09:44:03 by agouet            #+#    #+#             */
-/*   Updated: 2022/10/20 10:54:27 by lollith          ###   ########.fr       */
+/*   Updated: 2022/11/11 17:26:35 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <limits>
 
 class Span{
 	
 	public:
 	// canonic
-	Span( void );
 	~Span( void );
 	Span(Span const &copy);
 	Span &operator=(Span const &rhs);
@@ -33,8 +33,8 @@ class Span{
 
 	// membre
 	void addNumber(int nbr);
-	int shortestSpan();
-	int longestSpan();
+	long shortestSpan();
+	long longestSpan();
 
 	Span &my_fill_n(unsigned int from, unsigned int until, int value);
 
@@ -42,6 +42,8 @@ class Span{
 		unsigned int _N;
 		std::vector<int> _storage;
 		bool _is_fill;
+		
+		Span( void );
 };
 
 std::ostream &operator<<(std::ostream &o, Span const &rhs);

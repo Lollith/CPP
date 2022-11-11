@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.tpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lollith <lollith@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 11:06:58 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/20 19:17:08 by lollith          ###   ########.fr       */
+/*   Updated: 2022/11/11 17:48:52 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,16 @@ MutantStack<T> &MutantStack<T>::operator=( MutantStack<T> const &rhs){
 	return (*this);
 }
 
-// template< typename T >
-// typename std::stack<T>::container_type::iterator begin(){
-// 	return std::stack<T>::c.begin();
-// } 
+template< typename T >
+typename MutantStack<T>::iterator begin(){
+	return (std::stack<T>::c.begin());
+} 
 
-// template< typename T >
-// typename MutantStack<T>::container_type::iterator end(){
-// 	return std::stack<T>::c.end();
-// }
+template< typename T >
+typename MutantStack<T>::iterator end(){
+	return (std::stack<T>::c.end());
+}
+
+
+// psa besoin de forme canoniaue
+pas faire de .cpp
