@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 09:59:07 by agouet            #+#    #+#             */
-/*   Updated: 2022/11/11 18:29:12 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/12 12:59:34 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,29 +45,34 @@ std::ostream &operator<<(std::ostream &o, Span const &rhs){
 }
 
 long Span::longestSpan(){
-	if (_N <= 1)
+	if (static_cast<long>((_storage.size()) <= 1))
 		throw std::string ("Not enougth Number.");
 	sort( _storage.begin(), _storage.end());
 	return (static_cast<long>(*(_storage.end() - 1)) - static_cast<long>(*(_storage.begin()))); // protege du fait que si je creer Span(5) et que  jadd pas 5 nomnbre
 }
 
-long Span::shortestSpan(){ //ATTENTION A CORRIGER // + valeur absolue
-	if (_N <= 1)
+long Span::shortestSpan()
+{
+	if (static_cast<long>((_storage.size()) <= 1))
 		throw std::string ("Not enougth Number.");
 	sort( _storage.begin(), _storage.end());
 	
-	long tmp = std::numeric_limits<int>::max();
+	long tmp = std::numeric_limits<long>::max();
 	long diff = 0;
 	sort( _storage.begin(), _storage.end());
-		std::cout <<(static_cast<long>(*(_storage.end()-1)))<< std::endl; 
-	for (unsigned int i = 0; i +1   < static_cast<long>(*(_storage.end()-1)); i++ ){
-		diff =_storage [i + 1] - _storage[i];
-		if(tmp > diff)
-			tmp = diff;
+	if (static_cast<long>((_storage.size()) == 2))
+		tmp = Span::longestSpan();
+	else
+	{
+		for (unsigned int i =  1 ; i < _storage.size(); i++ )
+		{
+			diff =_storage [i ] - _storage[i - 1];
+			if(tmp > diff)
+				tmp = diff;
+		}
 	}
 	return (tmp);
 }
-
 
 Span &Span::my_fill_n(unsigned int from, unsigned int until, int value ){
 	if ( until > _N || from > _N)
