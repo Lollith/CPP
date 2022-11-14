@@ -6,7 +6,7 @@
 /*   By: agouet <agouet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 17:21:30 by lollith           #+#    #+#             */
-/*   Updated: 2022/10/14 15:18:08 by agouet           ###   ########.fr       */
+/*   Updated: 2022/11/14 09:28:29 by agouet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,16 @@ int main (int ac, char **av)
 		{
 			case 0:
 				level.complain("debug");
+				__attribute__((fallthrough));// explicite, explique au compiateur que le break est bien enlever 
 			case 1:
 				level.complain("info");
+				__attribute__((fallthrough));// explicite, explique au compiateur que le break est bien enlever 
 			case 2:
 				level.complain("warning");
+				__attribute__((fallthrough));// explicite, explique au compiateur que le break est bien enlever 
 			case 3:
 				level.complain("error");
-	
+				break;	
 			default:
 				std::cout << "[ Probably complaining about insignificant problems ]";
 				std::cout << std::endl;
